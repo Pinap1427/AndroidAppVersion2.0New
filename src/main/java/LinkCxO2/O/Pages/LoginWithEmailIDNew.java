@@ -1,5 +1,7 @@
 package LinkCxO2.O.Pages;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +15,7 @@ import io.appium.java_client.touch.offset.PointOption;
 
 public class LoginWithEmailIDNew extends AbstractComponent {
 
-	public LoginWithEmailIDNew(AndroidDriver driver) {
+	public LoginWithEmailIDNew(AndroidDriver driver) throws IOException {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -23,17 +25,26 @@ public class LoginWithEmailIDNew extends AbstractComponent {
 
 	ActionKeywords action = new ActionKeywords();
 
-	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Continue with Email or Mobile No.\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Continue with Email or Mobile No.\"]")
 	private WebElement continuewithemail;
+	
+	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[2]")
+	private WebElement EmailSwitch;
 
-	public void ClickonContinueWithEmailorMobile() {
+	public void ClickonContinueWithEmailorMobile() throws InterruptedException {
 		action.clickElement(continuewithemail);
+		Thread.sleep(2000);
+		action.clickElement(EmailSwitch);
 	}
-	@FindBy(xpath = "//android.widget.EditText[@text=\"Your Email or Mobile No\"]")
+
+	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Email ID\"]")
 	private WebElement EnterEmail;
 	public void EnterEmailId()
 	{
-		action.sendKeysElement(EnterEmail, "kprabhat956@gmail.com");
+//		action.sendKeysElement(EnterEmail, "mayur11@linkcxo.com");
+//		action.sendKeysElement(EnterEmail, "kprabhat956@gmail.com");
+		action.sendKeysElement(EnterEmail, "joyjovitha48@gmail.com");
+//		action.sendKeysElement(EnterEmail, "mayurmore2706@gmail.com");
 	}
 //	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Continue to Send OTP\"]/android.widget.TextView")
 //	private WebElement 	sentOTp;
@@ -42,10 +53,13 @@ public class LoginWithEmailIDNew extends AbstractComponent {
 //		action.clickElement(sentOTp);
 //	}
 //	555,2189
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Continue\"]")
+	private WebElement sendOtp;
 	public void TouchClickonSendOtp() throws InterruptedException
 	{
-		TouchAction action=new TouchAction(driver);
-		action.tap(PointOption.point(555, 2181)).perform();
+		action.clickElement(sendOtp);
+//		TouchAction action=new TouchAction(driver);
+//		action.tap(PointOption.point(555, 2181)).perform();
 		Thread.sleep(2000);
 	}
 	@FindBy(xpath = "//android.widget.EditText[@resource-id=\"otp_input_0\"]")

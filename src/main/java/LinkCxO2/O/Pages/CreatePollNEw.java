@@ -49,41 +49,47 @@ public class CreatePollNEw extends AbstractComponent{
 	{
 		action.clickElement(selectCateg);
 	}
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Business Growth   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+//	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Business Growth   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
-	public void SelectCategoryfromDropdown()
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confBtn;
+	public void SelectCategoryfromDropdown() throws InterruptedException
 	{
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confBtn);
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Add Question\"]")
 	private WebElement enterQues;
-	public void EnterQuestion()
+	public void EnterQuestion(String PollQuestion)
 	{
-		action.sendKeysElement(enterQues, "Who won the ipl 2024?");
+		action.sendKeysElement(enterQues, PollQuestion);
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 1\"]")
 	private WebElement enteroption1;
 	public void EnterOption1()
 	{
-		action.sendKeysElement(enteroption1, "KKR");
+		action.sendKeysElement(enteroption1, "Writing Headlines & Summary");
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 2\"]")
 	private WebElement enteroption2;
 	public void EnterOption2()
 	{
-		action.sendKeysElement(enteroption2, "SRH");
+		action.sendKeysElement(enteroption2, "Highlights Experience & Skills");
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 3\"]")
 	private WebElement enteroption3;
 	public void EnterOption3()
 	{
-		action.sendKeysElement(enteroption3, "RR");
+		action.sendKeysElement(enteroption3, "Gathering Recommendations");
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 4\"]")
 	private WebElement enteroption4;
 	public void EnterOption4()
 	{
-		action.sendKeysElement(enteroption4, "RCB");
+		action.sendKeysElement(enteroption4, "Struggling to optimize my LI");
 	}
 	
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Select Item\"]")

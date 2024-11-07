@@ -67,7 +67,7 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 	{
 		action.clickElement(selectCateg);
 	}
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Business Growth   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement SelectCategoryfromdd;
 	public void SelectCategoryfromDropdown()
 	{
@@ -77,8 +77,9 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 	private WebElement enterQues;
 	public void EnterQuestion()
 	{
-		action.sendKeysElement(enterQues, "For Testing");
+		action.sendKeysElement(enterQues, "For Testing Query in Company Page");
 	}
+	
 	
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
@@ -102,11 +103,25 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 	{
 		action.clickElement(PostQueryBtn);
 	}
-	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Add Your Answers\"]/android.widget.TextView")
-	private WebElement verifyQuery;
-	public boolean VerifyQueryPostorNot()
-	{
-		return action.isDisplay(verifyQuery);
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement backBtn;
+
+	public void ClickonBackIcon() throws InterruptedException {
+		action.clickElement(backBtn);
+		Thread.sleep(4000);
+		action.clickElement(CompanyClick);
 	}
+	
+	@FindBy(xpath = "(//android.widget.TextView)[14]")
+	private WebElement gettextActualQuestionQuery;
+
+	public String GetLastTextofQuery() {
+		return gettextActualQuestionQuery.getText();
+	}
+	
+	
+	
+	
 
 }

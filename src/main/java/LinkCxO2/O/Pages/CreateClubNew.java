@@ -50,7 +50,7 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(addimgclk);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"download.jpeg\"]")
+	@FindBy(xpath = "(//android.widget.ImageView)[33]") //first image will be selected
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
@@ -61,8 +61,8 @@ public class CreateClubNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Club Title\"]")
 	private WebElement enterClubTitle;
 
-	public void EnterClubTitle() {
-		action.sendKeysElement(enterClubTitle, "Testing Club");
+	public void EnterClubTitle(String ClubTitle) {
+		action.sendKeysElement(enterClubTitle, ClubTitle);
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
@@ -75,13 +75,13 @@ public class CreateClubNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Club Details\"]")
 	private WebElement clubDetails;
 
-	public void EnterClubDetails() {
-		action.sendKeysElement(clubDetails, "New Testing Club");
+	public void EnterClubDetails(String ClubDetails) {
+		action.sendKeysElement(clubDetails, ClubDetails);
 	}
 
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.EditText")
+	@FindBy(xpath = "//android.widget.EditText[@text=\"Select Currency\"]")
 	private WebElement clickCurrency;
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" INR (₹)\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" INR (₹)\"]/android.widget.TextView")
 	private WebElement selectINR;
 
 	public void SelectCurrency() throws InterruptedException {
@@ -90,7 +90,7 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(selectINR);
 	}
 
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[3]")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]")
 	private WebElement amountEnter;
 
 	public void EnterAmount() {
@@ -104,7 +104,7 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(selectIndclk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Media / Entertainment / Communication\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Media / Entertainment / Communication\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement selectIndustry;
 
 	public void SelectIndustryFromDD() {
@@ -125,7 +125,7 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(selectCateclk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Operations\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Operations\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement selectCategory;
 
 	public void SelectCategoryFromDD() {
@@ -157,7 +157,7 @@ public class CreateClubNew extends AbstractComponent {
 	}
 	//scroll Down by co ordinates
 	
-	@FindBy(xpath = "(//android.widget.TextView)[10]")
+	@FindBy(xpath = "(//android.widget.TextView)[3]")
 	private WebElement returnactualGettextofTitle;
 	public String ActualGettexTitle() {
 		return returnactualGettextofTitle.getText();

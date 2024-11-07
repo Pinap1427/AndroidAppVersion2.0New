@@ -52,7 +52,8 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(addimgclk);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"testimg.jpeg\"]")
+//	@FindBy(xpath = "//android.widget.TextView[@text=\"testimg.jpeg\"]")
+	@FindBy(xpath = "(//android.widget.ImageView)[9]")  //3rd image will be selected
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
@@ -63,8 +64,8 @@ public class CreateEventNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter event title\"]")
 	private WebElement enterTitle;
 
-	public void EnterEventTitle() {
-		action.sendKeysElement(enterTitle, "IND vs PAK T20 WC Live Screening");
+	public void EnterEventTitle(String EventTitle) {
+		action.sendKeysElement(enterTitle, EventTitle);
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
@@ -81,7 +82,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(selectIndclk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Media / Entertainment / Communication\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Media / Entertainment / Communication\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement selectIndustry;
 
 	public void SelectIndustryFromDD() {
@@ -102,12 +103,26 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(selectCateclk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Media & PR\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Operations\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement selectCategory;
 
-	public void SelectCategoryFromDD() {
+	public void SelectCategoryFromDD() throws InterruptedException {
 		// use Swipe down with co ordinates method
-		action.clickElement(selectCategory);
+		action.clickElement(SelectCategoryfromdd);
+//		Thread.sleep(1000);
+//		action.clickElement(confBtn);
+//		action.clickElement(selectCategory);
+	}
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
+	private WebElement SelectCategoryfromdd;
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confBtn;
+	public void SelectCategoryfromDropdown() throws InterruptedException
+	{
+		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confBtn);
 	}
 
 	// use ClickonConfirmButton after this in main class
@@ -116,10 +131,31 @@ public class CreateEventNew extends AbstractComponent {
 			+ "\r\n" + "Don't miss out on the electrifying atmosphere, the camaraderie, and the unforgettable.\r\n"
 			+ "\r\n" + "Be there to witness history in the making.";
 
+	String LinkedInEventDetails="Are you ready to crack the code and unlock the secrets of AI technology to create more freedom, time, and income to make a difference and travel the world?\r\n"
+			+ "\r\n"
+			+ "Do you realize that ChatGPT is the future, yet you don’t know where to start?\r\n"
+			+ "\r\n"
+			+ "Join me for this transformative event designed for coaches, consultants, and entrepreneurs who want to take advantage of cutting-edge AI technology to improve life - without stress and overwhelm.\r\n"
+			+ "\r\n"
+			+ "Here's what you can expect:\r\n"
+			+ "\r\n"
+			+ "🔐 Master ChatGPT: Discover how ChatGPT can revolutionize your LinkedIn strategy. Learn how to write effective message sequences, LinkedIn event invitations and streamline your content creation in a fraction of the time.\r\n"
+			+ "\r\n"
+			+ "💡 LinkedIn Events Mastery: Unleash the power of LinkedIn Events to expand your network exponentially, make meaningful connections, build credibility, and attract your ideal clients.\r\n"
+			+ "\r\n"
+			+ "⚙️ Effective Systems: Gain valuable insights into creating systems that leverage results, reduce overwhelm, free up your time, and allow you to scale.\r\n"
+			+ "\r\n"
+			+ "🚀 Supercharge Productivity & Well-being: Learn practical strategies to eliminate stress, supercharge productivity, and create an awesome work-life balance as you navigate the demands of a thriving business.\r\n"
+			+ "\r\n"
+			+ "📅 Save the Date: Tuesday, July 16 at 11.30 am EST\r\n"
+			+ "🌍 Location: The comfort of your own office or home\r\n"
+			+ "💼 Hosted by: Shamayah Sarrucco, LinkedIn Strategist\r\n"
+			+ "💻 Event Format: Offline - Raghuleela Mall Vashi";
+	
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Event Details\"]")
 	private WebElement enterEventDet;
 
-	public void EnterEventDetails() {
+	public void EnterEventDetails(String EventDetails) {
 		action.sendKeysElement(enterEventDet, EventDetails);
 	}
 
@@ -154,8 +190,8 @@ public class CreateEventNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Location of the Event\"]")
 	private WebElement locationEnter;
 
-	public void EnterLocation() {
-		action.sendKeysElement(locationEnter, "Raghuleela Mall Vashi");
+	public void EnterLocation(String EventVenue) {
+		action.sendKeysElement(locationEnter, EventVenue);
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.EditText")
@@ -184,7 +220,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(startDate);
 	}
 
-	@FindBy(xpath = "//android.view.View[@content-desc=\"09 June 2024\"]")
+	@FindBy(xpath = "//android.view.View[@text=\"31\"]")
 	private WebElement selectDatefromcal;
 
 	@FindBy(id = "android:id/button1")
@@ -281,11 +317,15 @@ public class CreateEventNew extends AbstractComponent {
 	public void SelectCheckBoxOfConnection() {
 		action.clickElement(SelectcheckboxCon);
 	}
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Select All\"]/android.widget.TextView")
+	private WebElement selectAll;
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Publish Event\"]/android.widget.TextView")
 	private WebElement publishEvent;
 
-	public void ClickonPublishEvent() {
+	public void ClickonPublishEvent() throws InterruptedException {
+		action.clickElement(selectAll);
+		Thread.sleep(1000);
 		action.clickElement(publishEvent);
 	}
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[1]")
@@ -299,7 +339,7 @@ public class CreateEventNew extends AbstractComponent {
 		Thread.sleep(2000);
 	}
 //	542,2135,1114
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.widget.ImageView")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.View/android.view.ViewGroup")
 	private WebElement VerifyEvent;
 	
 	public boolean VerifyEventCreatedorNOT()

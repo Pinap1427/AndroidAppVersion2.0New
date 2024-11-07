@@ -45,7 +45,7 @@ public class CompanyCreatePost extends AbstractComponent {
 
 //	absCom.swipDownByCoordinates(517, 2122, 454);
 //	testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"New testing Company @@@@, SFGDFGDGFDGDG, SFDFGDGD\"]/android.widget.TextView[1]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Hp Company\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
@@ -70,7 +70,7 @@ public class CompanyCreatePost extends AbstractComponent {
 	private WebElement enterText;
 
 	public void EnterTextForPOst() {
-		action.sendKeysElement(enterText, "Testinggg");
+		action.sendKeysElement(enterText, "Meet the world’s most powerful, ultra-mobile, next-gen AI PC. Swipe to know more! ");
 	}
 	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText")
@@ -106,7 +106,7 @@ public class CompanyCreatePost extends AbstractComponent {
 		Thread.sleep(2000);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"download.jpeg\"]")
+	@FindBy(xpath = "(//android.widget.ImageView)[15]")
 	private WebElement selectImg;
 
 	public void SelectImage() throws InterruptedException {

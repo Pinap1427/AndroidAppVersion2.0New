@@ -30,7 +30,7 @@ public class TestBaseLinkCxo {
 		public static WebDriverWait wait;
 		
 		public void TestBase() throws IOException{	
-			FileInputStream fs=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/ishine/config/configure.propertief");
+			FileInputStream fs=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/LinkCxO2/O/config/configure.properties");
 			prop=new Properties();
 			prop.load(fs);
 		}
@@ -43,11 +43,10 @@ public class TestBaseLinkCxo {
 			dc.setCapability("deviceName", "LinkCxOPhone");
 //			dc.setCapability("UDID", "31d2859a");//for physical device
 			dc.setCapability("UDID", "emulator-5554");//for emulator
-//			dc.setCapability("platformVersion", "9");
-			dc.setCapability("platformVersion", "8");
-//			dc.setCapability("app", "D://LinkCxO//application-33fdc9cb-2973-459c-b708-4edc940ef34e.apk");
-			dc.setCapability("app", "D://LinkCxO//application-53e518d2-4e3c-4050-830a-5bd5ccacc366.apk");
-//			dc.setCapability("app", "D://LinkCxO//pgs1.156.0_0.315.2_uxXGf.apk");
+			dc.setCapability("platformVersion", "13");
+			String apkPath=System.getProperty("user.dir") + "\\appapk\\application-f9fe1cda-be24-4797-80d5-a051305a0d11.apk";
+			dc.setCapability("app", apkPath);
+//			dc.setCapability("app", "D://LinkCxO//application-611a5e0e-5265-4778-b052-180f0c325130.apk");
 			URL url= new URL("http://127.0.0.1:4723/wd/hub");
 			 driver = new AndroidDriver(url, dc);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

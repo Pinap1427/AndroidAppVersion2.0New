@@ -35,14 +35,19 @@ public class TestUtilsLinkCxo extends TestBaseLinkCxo{
 	
 	AndroidDriver driver;
 	
-	public TestUtilsLinkCxo(AndroidDriver driver) throws IOException {
-		super();
-		// TODO Auto-generated constructor stub
-		this.driver=(AndroidDriver) driver;
-		System.out.println("AV");
-		
-	}
+//	public TestUtilsLinkCxo(AndroidDriver driver) throws IOException {
+//		super();
+//		// TODO Auto-generated constructor stub
+//		this.driver=(AndroidDriver) driver;
+//		System.out.println("AV");
+//		
+//	}
 	
+	public TestUtilsLinkCxo(AndroidDriver driver) throws IOException {
+        super();
+        this.driver = driver;
+        System.out.println("Android Application Launched Succesfully");
+    }
 	
 	
 
@@ -88,7 +93,7 @@ public class TestUtilsLinkCxo extends TestBaseLinkCxo{
 		extent.attachReporter(htmlReport);
 		extent.setSystemInfo("OS", System.getProperty("os.name"));
 		extent.setSystemInfo("User Name", System.getProperty("user.name"));
-		extent.setSystemInfo("Browser", "Chrome");
+		extent.setSystemInfo("Responsive", "Android Mobile Application");
 
 	}
 

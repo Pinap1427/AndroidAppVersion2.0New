@@ -3,13 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MayurTest.SampleTesting">
+      <class name="MayurTest.AllTestCasesLinkCxoApp">
         <methods>
-          <include name="LoginInWithMobileNumber1"/>
-          <include name="tearDown"/>
+          <include name="PostAsQuery"/>
+          <include name="LoginInWithEmailid"/>
+          <include name="CreatePost"/>
+          <include name="beforeMethod"/>
+          <include name="CreateSurvey"/>
+          <include name="afterMethod"/>
+          <include name="CreatePoll"/>
           <include name="SetUp"/>
+          <include name="tearDown"/>
+          <include name="ComposeArticle"/>
         </methods>
-      </class> <!-- MayurTest.SampleTesting -->
+      </class> <!-- MayurTest.AllTestCasesLinkCxoApp -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

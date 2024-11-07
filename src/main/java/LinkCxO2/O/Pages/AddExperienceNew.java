@@ -54,7 +54,7 @@ public class AddExperienceNew extends AbstractComponent {
 		action.clickElement(clickSelectJob);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Full Time   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Full Time\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectJobType;
 
 	public void SelectJobTypeFromDropdown() {

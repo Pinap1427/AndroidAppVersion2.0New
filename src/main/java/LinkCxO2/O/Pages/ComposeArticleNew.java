@@ -1,5 +1,8 @@
 package LinkCxO2.O.Pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -42,7 +45,7 @@ public class ComposeArticleNew extends AbstractComponent {
 		action.clickElement(imgClick);
 	}
 
-	@FindBy(id = "android:id/title")
+	@FindBy(xpath = "(//android.widget.ImageView)[6]")
 	private WebElement selectImg;
 
 	public void SelectImage() {
@@ -52,15 +55,15 @@ public class ComposeArticleNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Title\"]")
 	private WebElement title;
 
-	public void EnterArticleTitle() {
-		action.sendKeysElement(title, "Testing");
+	public void EnterArticleTitle(String ArticleTitle) {
+		action.sendKeysElement(title, ArticleTitle);
 	}
 
-	@FindBy(xpath = "//android.widget.EditText[@text=\"Unlock Your Professional Voice and Begin Networking with Top Executives Today!\"]")
+	@FindBy(xpath = "//android.widget.EditText[@text=\"Start Entering Here\"]")
 	private WebElement descr;
 
-	public void EnterDescription() {
-		action.sendKeysElement(descr, "For Testing Purpose");
+	public void EnterDescription(String ArticleDesc) throws InterruptedException, AWTException {
+		action.sendKeysElement(descr, ArticleDesc);
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Publish Your Article\"]")

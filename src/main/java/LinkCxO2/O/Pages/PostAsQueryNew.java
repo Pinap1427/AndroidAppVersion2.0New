@@ -41,24 +41,31 @@ public class PostAsQueryNew extends AbstractComponent{
 	{
 		action.clickElement(selectCateg);
 	}
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Business Growth   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
-	public void SelectCategoryfromDropdown()
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confBtn;
+	public void SelectCategoryfromDropdown() throws InterruptedException
 	{
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confBtn);
 	}
+	
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter your question\"]")
 	private WebElement enterQues;
-	public void EnterQuestion()
+	public void EnterQuestion(String QueryQuest)
 	{
-		action.sendKeysElement(enterQues, "For Testing");
+		action.sendKeysElement(enterQues, QueryQuest);
 	}
 	//
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Description\"]")
 	private WebElement enterDescr;
-	public void EnterDescription()
+	public void EnterDescription(String QueryDesc)
 	{
-		action.sendKeysElement(enterDescr, "Testing");
+		action.sendKeysElement(enterDescr, QueryDesc);
 	}
 	
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Post Your Query\"]")

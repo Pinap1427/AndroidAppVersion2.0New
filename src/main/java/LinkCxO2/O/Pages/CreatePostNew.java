@@ -44,8 +44,8 @@ public class CreatePostNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Unlock Your Professional Voice and Begin Networking with Top Executives Today!\"]")
 	private WebElement enterText;
 
-	public void EnterTextForPOst() {
-		action.sendKeysElement(enterText, "Testing");
+	public void EnterTextForPOst(String CreatePostDesc) {
+		action.sendKeysElement(enterText, CreatePostDesc);
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup)[14]")
@@ -54,6 +54,10 @@ public class CreatePostNew extends AbstractComponent {
 	public void ClickonPhotosIcon() {
 		action.clickElement(photosicn);
 	}
+	
+	@FindBy(xpath = "//android.widget.Button[@text=\"Allow\"]")
+	private WebElement allowBtn;
+	
 	public void EnterBtn() throws AWTException, InterruptedException
 	{
 		Robot rb=new Robot();
@@ -63,10 +67,13 @@ public class CreatePostNew extends AbstractComponent {
 		Thread.sleep(2000);
 	}
 
-	@FindBy(id = "android:id/title")
+//	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1717653192935.jpg, 120 kB, Jul 5\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView")
+	@FindBy(xpath = "(//android.widget.ImageView)[3]")
 	private WebElement selectImg;
 
-	public void SelectImage() {
+	public void SelectImage() throws InterruptedException {
+		action.clickElement(allowBtn);
+		Thread.sleep(3000);
 		action.clickElement(selectImg);
 	}
 

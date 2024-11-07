@@ -49,7 +49,7 @@ public class EditExperienceNew extends AbstractComponent {
 	{
 		action.clickElement(selectJobTypeEdited);
 	}
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Others   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Others\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectJobTypeEdit;
 	public void SelectEditedJobType()
 	{

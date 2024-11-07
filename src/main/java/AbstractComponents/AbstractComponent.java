@@ -2,9 +2,13 @@ package AbstractComponents;
 
 
 import java.awt.Dimension;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,10 +24,13 @@ import io.appium.java_client.touch.offset.PointOption;
 public class AbstractComponent{
 	
 	public AndroidDriver driver;
-	//public static final EXPLICIT_WAIT = 10;
+	public static Properties prop;
 	
-	public AbstractComponent(AndroidDriver driver) 
+	public AbstractComponent(AndroidDriver driver) throws IOException 
 	{
+		FileInputStream fs=new FileInputStream(System.getProperty("user.dir")+"/src/main/java/LinkCxO2/O/config/configure.properties");
+		prop=new Properties();
+		prop.load(fs);
 		this.driver=driver;
 	}
 
@@ -82,6 +89,15 @@ public class AbstractComponent{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+	
+	 public void scrollToElementByText(String text) {
+	        driver.findElementByAndroidUIAutomator(
+	            "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + text + "\"));");
+	    }
+//	 
+//	 Actions act1=new Actions(driver);
+//	   
+//	    
 	
 //	public Select DropDownSelection(String element, WebElement designation)
 //	{

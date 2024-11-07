@@ -29,7 +29,7 @@ public class ApplyJobNew extends AbstractComponent {
 		action.clickElement(JobsBtn);
 	}
 
-	@FindBy(xpath = "(//android.widget.TextView)[15]")
+	@FindBy(xpath = "(//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[1])[2]")
 	private WebElement SecondJObClk;
 	
 	@FindBy(xpath = "(//android.widget.TextView)[2]")
@@ -109,11 +109,16 @@ public class ApplyJobNew extends AbstractComponent {
 
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Mumbai\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectLocation;
+	
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Mumbai\"]/android.widget.TextView")
+	private WebElement locationEnt;
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement ConfirmLocationBtn;
 
 	public void SelectLocationFromDropdown() throws InterruptedException {
-		action.clickElement(selectLocation);
+		action.clickElement(locationEnt);
 		Thread.sleep(1000);
-		action.clickElement(ConfmBtn);
+		action.clickElement(ConfirmLocationBtn);
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Yes\"])[1]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
@@ -143,14 +148,14 @@ public class ApplyJobNew extends AbstractComponent {
 
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Attach Resume\"]")
 	private WebElement clickAttachResume;
-	@FindBy(xpath = "//android.widget.TextView[@text=\"pdf-sample_0.pdf\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"dummy-pdf_2.pdf\"]")
 	private WebElement SelectResume;
 
 	public void AttachResume() throws InterruptedException {
 		action.clickElement(clickAttachResume);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		action.clickElement(SelectResume);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]")

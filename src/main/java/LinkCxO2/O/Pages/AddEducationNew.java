@@ -1,6 +1,9 @@
 package LinkCxO2.O.Pages;
 
+import java.awt.Desktop.Action;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,7 +11,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import AbstractComponents.AbstractComponent;
 import LinkCxO2.O.Utils.ActionKeywords;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class AddEducationNew extends AbstractComponent{
 	
@@ -24,7 +29,7 @@ public class AddEducationNew extends AbstractComponent{
 
 	ActionKeywords action = new ActionKeywords();
 	
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup[2]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[2]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement plusbtnedu;
 	public void ClickonPlusButtonInExp()
 	{
@@ -120,5 +125,21 @@ public class AddEducationNew extends AbstractComponent{
 		w.until(ExpectedConditions.visibilityOf(verifyEdu));
 		return action.isDisplay(verifyEdu);
 	}
+	
+	//////////////Test Scroll Method//////////
+	@FindBy(xpath = "//android.widget.TextView[@text='Education']")
+    private WebElement educationSection;
+
+    public void scrollToEducationSection() {
+        scrollToElementByText("Education");
+    }
+
+    public boolean isEducationSectionVisible() {
+        return educationSection.isDisplayed();
+    }
+    
+    /////////////////////////
+    
+   
 
 }

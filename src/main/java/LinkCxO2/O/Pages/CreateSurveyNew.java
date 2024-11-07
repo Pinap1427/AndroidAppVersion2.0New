@@ -38,15 +38,15 @@ public class CreateSurveyNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Title\"]")
 	private WebElement titleEnt;
 
-	public void EnterTitle() {
-		action.sendKeysElement(titleEnt, "Testing");
+	public void EnterTitle(String SurveyTitle) {
+		action.sendKeysElement(titleEnt, SurveyTitle);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Survey Description\"]")
 	private WebElement DescEnt;
 
-	public void EnterDescriptionforSurvey() {
-		action.sendKeysElement(DescEnt, "IPL");
+	public void EnterDescriptionforSurvey(String SurveyDesc) {
+		action.sendKeysElement(DescEnt, SurveyDesc);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Select Category\"]")
@@ -56,12 +56,20 @@ public class CreateSurveyNew extends AbstractComponent {
 		action.clickElement(selectCateg);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Business Growth   \"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confBtn;
 
-	public void SelectCategoryfromDropdownSurvey() {
+	public void SelectCategoryfromDropdownSurvey() throws InterruptedException {
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confBtn);
 	}
+	
+	
+
 
 	// use swipe down by co ordinates using these 504,2017,487,614
 
@@ -91,36 +99,36 @@ public class CreateSurveyNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Question\"]")
 	private WebElement enterQues;
 
-	public void EnterQuestion() {
-		action.sendKeysElement(enterQues, "Who won the ipl 2024?");
+	public void EnterQuestion(String SurveyQuest1) {
+		action.sendKeysElement(enterQues, SurveyQuest1);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 1\"]")
 	private WebElement enteroption1;
 
-	public void EnterOption1() {
-		action.sendKeysElement(enteroption1, "KKR");
+	public void EnterOption1(String SurveyOption1Q1) {
+		action.sendKeysElement(enteroption1, SurveyOption1Q1);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 2\"]")
 	private WebElement enteroption2;
 
-	public void EnterOption2() {
-		action.sendKeysElement(enteroption2, "SRH");
+	public void EnterOption2(String SurveyOption2Q1) {
+		action.sendKeysElement(enteroption2, SurveyOption2Q1);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 3\"]")
 	private WebElement enteroption3;
 
-	public void EnterOption3() {
-		action.sendKeysElement(enteroption3, "RR");
+	public void EnterOption3(String SurveyOption3Q1) {
+		action.sendKeysElement(enteroption3, SurveyOption3Q1);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 4\"]")
 	private WebElement enteroption4;
 
-	public void EnterOption4() {
-		action.sendKeysElement(enteroption4, "RCB");
+	public void EnterOption4(String SurveyOption4Q1) {
+		action.sendKeysElement(enteroption4, SurveyOption4Q1);
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Select Item\"])[1]/android.widget.TextView")
@@ -140,22 +148,22 @@ public class CreateSurveyNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Question\"]")
 	private WebElement enterSecondQues;
 
-	public void EnterSecondQuestion() {
-		action.sendKeysElement(enterSecondQues, "Who won the ipl 2023?");
+	public void EnterSecondQuestion(String SurveyQuest2) {
+		action.sendKeysElement(enterSecondQues, SurveyQuest2);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 1\"]")
 	private WebElement enterSecondQuestionoption1;
 
-	public void EnterSecondOption1() {
-		action.sendKeysElement(enterSecondQuestionoption1, "CSK");
+	public void EnterSecondOption1(String SurveyOption1Q2) {
+		action.sendKeysElement(enterSecondQuestionoption1, SurveyOption1Q2);
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 2\"]")
 	private WebElement enterSecondQuestionoption2;
 
-	public void EnterSecondOption2() {
-		action.sendKeysElement(enterSecondQuestionoption2, "GT");
+	public void EnterSecondOption2(String SurveyOption2Q2) {
+		action.sendKeysElement(enterSecondQuestionoption2, SurveyOption2Q2);
 	}
 
 //again call swipe by coordinates method using these 504,2017,487,614
@@ -184,8 +192,8 @@ public class CreateSurveyNew extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Question\"]")
 	private WebElement enterThirdQues;
 
-	public void EnterThirdQuestion() {
-		action.sendKeysElement(enterThirdQues, "Who Won The Orange Cap in IPL 2024?");
+	public void EnterThirdQuestion(String SurveyQuest3) {
+		action.sendKeysElement(enterThirdQues, SurveyQuest3);
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Select Item\"])[1]/android.widget.TextView")
