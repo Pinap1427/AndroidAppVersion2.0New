@@ -44,7 +44,7 @@ public class TestBaseLinkCxo {
 //			dc.setCapability("UDID", "31d2859a");//for physical device
 			dc.setCapability("UDID", "emulator-5554");//for emulator
 			dc.setCapability("platformVersion", "13");
-			String apkPath=System.getProperty("user.dir") + "\\appapk\\application-f9fe1cda-be24-4797-80d5-a051305a0d11.apk";
+			String apkPath=System.getProperty("user.dir") + "\\appapk\\application-4422e848-9224-47dd-85db-2e6e733ec213.apk";
 			dc.setCapability("app", apkPath);
 //			dc.setCapability("app", "D://LinkCxO//application-611a5e0e-5265-4778-b052-180f0c325130.apk");
 			URL url= new URL("http://127.0.0.1:4723/wd/hub");

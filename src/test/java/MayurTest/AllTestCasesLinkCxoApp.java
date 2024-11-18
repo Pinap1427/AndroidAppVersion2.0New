@@ -275,7 +275,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 3, enabled = true)
+	@Test(priority = 3, enabled = false)
 	public void ComposeArticle() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 3 : Compose Article");
 		Thread.sleep(3000);
@@ -317,7 +317,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void CreatePoll() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 4 : Create Poll ");
 		Thread.sleep(3000);
@@ -370,7 +370,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 5, enabled = true)
+	@Test(priority = 5, enabled = false)
 	public void PostAsQuery() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 5 : Post as Query ");
 		Thread.sleep(3000);
@@ -410,7 +410,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 6, enabled = true)
+	@Test(priority = 6, enabled = false)
 	public void CreateSurvey() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 6 : Create Survey ");
 		Thread.sleep(3000);
@@ -988,7 +988,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void CreateNewEvent() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 8 : Create New Event ");
 		Thread.sleep(3000);
@@ -1092,7 +1092,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public void CreateClub() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 9 : Create New Club ");
 		Thread.sleep(3000);

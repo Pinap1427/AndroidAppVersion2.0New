@@ -63,8 +63,16 @@ public class ComposeArticleNew extends AbstractComponent {
 	private WebElement descr;
 
 	public void EnterDescription(String ArticleDesc) throws InterruptedException, AWTException {
+		action.clickElement(descr);
+		Thread.sleep(2000);
 		action.sendKeysElement(descr, ArticleDesc);
+//		Thread.sleep(2000);
+//		action.sendKeysElement(EditArticle, "aa");
 	}
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.widget.EditText")
+	private WebElement EditArticle;
+	
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Publish Your Article\"]")
 	private WebElement publish;

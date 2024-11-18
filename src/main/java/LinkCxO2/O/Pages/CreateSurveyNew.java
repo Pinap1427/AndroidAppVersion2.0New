@@ -217,7 +217,7 @@ public class CreateSurveyNew extends AbstractComponent {
 		action.clickElement(createYourSur);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"+ 2 More...\"]/android.widget.TextView")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.TextView[2]")
 	private WebElement verifySurvey;
 
 	public boolean VerifySuveyCreatedorNOT() {
