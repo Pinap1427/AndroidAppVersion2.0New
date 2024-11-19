@@ -148,12 +148,17 @@ public class ApplyJobNew extends AbstractComponent {
 
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Attach Resume\"]")
 	private WebElement clickAttachResume;
-	@FindBy(xpath = "//android.widget.TextView[@text=\"dummy-pdf_2.pdf\"]")
+	@FindBy(xpath = "//android.widget.CompoundButton[@text=\"Documents\"]")
+	private WebElement DocumentsClk;
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Aakash_Garg.docx\"]")
 	private WebElement SelectResume;
+	
 
 	public void AttachResume() throws InterruptedException {
 		action.clickElement(clickAttachResume);
 		Thread.sleep(3000);
+		action.clickElement(DocumentsClk);
+		Thread.sleep(2000);
 		action.clickElement(SelectResume);
 		Thread.sleep(5000);
 	}

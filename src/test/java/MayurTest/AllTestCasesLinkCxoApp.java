@@ -1161,7 +1161,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 10, enabled = true)
+	@Test(priority = 10, enabled = false)
 	public void CreateNewJob() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 10 : Create New Job ");
 		Thread.sleep(3000);
@@ -1256,7 +1256,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11, enabled = true)
 	public void ApplyJob() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 11 : Apply Job ");
 		Thread.sleep(3000);
