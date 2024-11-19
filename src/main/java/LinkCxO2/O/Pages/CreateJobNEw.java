@@ -73,7 +73,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(selectIndclk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" IT & ITES\"]/android.widget.CheckBox")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"IT & ITES\"]/android.widget.CheckBox")
 	private WebElement selectIndustry;
 
 	public void SelectIndustryFromDD() {
@@ -94,7 +94,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(selectJobType);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Full Time\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Full Time\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectJobtypeFromDD;
 
 	public void SelectJobTypeFromDropdown() {
@@ -108,7 +108,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(selectWorkplace);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" On-Site\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"On-Site\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectWorkplaceFromDD;
 
 	public void SelectWorkplaceFromDropdown() {
@@ -129,7 +129,7 @@ public class CreateJobNEw extends AbstractComponent {
 //		action.sendKeysElement(enterSkill, "Java");
 		Thread.sleep(1000);
 		driver.navigate().back();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		action.clickElement(selectJava);
 		Thread.sleep(2000);
 //		action.clickElement(selectJava);
@@ -139,7 +139,7 @@ public class CreateJobNEw extends AbstractComponent {
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Choose the Job Location\"]")
 //	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[5]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement locatitionClick;
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Mumbai\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Mumbai\"]/android.widget.TextView")
 	private WebElement locationEnt;
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
 	private WebElement ConfirmLocationBtn;
@@ -166,7 +166,7 @@ public class CreateJobNEw extends AbstractComponent {
 	
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Select qualification\"]")
 	private WebElement Qualificationdrop;
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Post Graduate Diploma in Management - PGDM \"]/android.widget.TextView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Post Graduate Diploma in Management - PGDM \"]/android.widget.TextView")
 	private WebElement SelectQualification;
 	
 	public void SelectQualificationfromDropdown() throws InterruptedException
@@ -174,6 +174,8 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(Qualificationdrop);
 		Thread.sleep(1000);
 		action.clickElement(SelectQualification);
+		Thread.sleep(1000);
+		action.clickElement(ConfirmLocationBtn);
 	}
 
 	@FindBy(xpath = "(//android.widget.EditText[@text=\"Minimum\"])[1]")
@@ -183,7 +185,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(MinExp);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" 14 Years\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" 16 Years\"]/android.widget.CheckBox")
 	private WebElement selectMinyear;
 
 	public void SelectMinExp() {
@@ -197,7 +199,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(MaxExp);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"20 Years\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"20 Years\"]/android.widget.CheckBox")
 	private WebElement selectMaxyear;
 
 	public void SelectMaxExp() {
@@ -236,14 +238,14 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(clickMAxSalary);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"50 Lacs\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"80 Lacs\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
 	private WebElement selectMaxSal;
 
 	public void SelectMaxSalary() {
 		action.clickElement(selectMaxSal);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Company\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Company\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView[1]")
 	private WebElement companyRadBtn;
 
 	public void ClickonCompanyRadioButton() {
@@ -478,7 +480,7 @@ public class CreateJobNEw extends AbstractComponent {
 		action.clickElement(savedTab);
 	}
 
-	@FindBy(xpath = "(//android.widget.TextView)[3]")
+	@FindBy(xpath = "(//android.widget.TextView)[2]")
 	private WebElement returnActualGettextofjobTitle;
 
 	public String ActualGettextJOBTitle() {

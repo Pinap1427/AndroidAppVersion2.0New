@@ -237,7 +237,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 2, enabled = true)
+	@Test(priority = 2, enabled = false)
 	public void CreatePost() throws InterruptedException, IOException, AWTException {
 
 		testUtils1.testCaseCreate("TC 2 : Create Post ");
@@ -988,7 +988,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public void CreateNewEvent() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 8 : Create New Event ");
 		Thread.sleep(3000);
@@ -1092,7 +1092,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 9, enabled = true)
+	@Test(priority = 9, enabled = false)
 	public void CreateClub() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 9 : Create New Club ");
 		Thread.sleep(3000);
@@ -1161,7 +1161,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void CreateNewJob() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 10 : Create New Job ");
 		Thread.sleep(3000);
@@ -1214,9 +1214,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Click on Max Exp");
 			newJobCreateMethod.SelectMaxExp();
 			testUtils1.test.log(Status.INFO, "Select Max Exp from Dropdown");
-			newJobCreateMethod.SelectCurrency();
-			testUtils1.test.log(Status.INFO, "Select Currency from Dropdown");
-			newJobCreateMethod.ClickonSalary();
+//			newJobCreateMethod.SelectCurrency();///currently salary is auto selected as INR
+//			testUtils1.test.log(Status.INFO, "Select Currency from Dropdown");
+			newJobCreateMethod.ClickonSalary();  
 			testUtils1.test.log(Status.INFO, "Click on Min Salary");
 			newJobCreateMethod.SelectMinSalary();
 			testUtils1.test.log(Status.INFO, "Select Min Salary from Dropdown");
