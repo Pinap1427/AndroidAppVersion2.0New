@@ -45,7 +45,7 @@ public class CompanyCreatePost extends AbstractComponent {
 
 //	absCom.swipDownByCoordinates(517, 2122, 454);
 //	testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Hp Company\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Apmosys\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
