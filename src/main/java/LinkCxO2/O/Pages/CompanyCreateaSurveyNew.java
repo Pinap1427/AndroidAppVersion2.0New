@@ -38,7 +38,7 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 
 //		absCom.swipDownByCoordinates(517, 2122, 454);
 //		testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"New testing Company @@@@, SFGDFGDGFDGDG, SFDFGDGD\"]/android.widget.TextView[1]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Apmosys\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
@@ -63,7 +63,7 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 	private WebElement titleEnt;
 
 	public void EnterTitle() {
-		action.sendKeysElement(titleEnt, "Testing");
+		action.sendKeysElement(titleEnt, "Employee Engagement and Satisfaction Survey ");
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
@@ -78,7 +78,7 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 	private WebElement DescEnt;
 
 	public void EnterDescriptionforSurvey() {
-		action.sendKeysElement(DescEnt, "IPL");
+		action.sendKeysElement(DescEnt, "We value your feedback and want to ensure we are creating the best possible work environment. Please take a few minutes to complete this survey. Your responses are anonymous and will help us improve.");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Select Category\"]")
@@ -88,11 +88,15 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 		action.clickElement(selectCateg);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
 
-	public void SelectCategoryfromDropdownSurvey() {
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confimBtnPOll;
+	public void SelectCategoryfromDropdownSurvey() throws InterruptedException {
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confimBtnPOll);
 	}
 
 	// use swipe down by co ordinates using these 504,2017,487,614
@@ -124,35 +128,35 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 	private WebElement enterQues;
 
 	public void EnterQuestion() {
-		action.sendKeysElement(enterQues, "Who won the ipl 2024?");
+		action.sendKeysElement(enterQues, "Overall, how satisfied are you with your current job?");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 1\"]")
 	private WebElement enteroption1;
 
 	public void EnterOption1() {
-		action.sendKeysElement(enteroption1, "KKR");
+		action.sendKeysElement(enteroption1, "Very satisfied");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 2\"]")
 	private WebElement enteroption2;
 
 	public void EnterOption2() {
-		action.sendKeysElement(enteroption2, "SRH");
+		action.sendKeysElement(enteroption2, "Satisfied");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 3\"]")
 	private WebElement enteroption3;
 
 	public void EnterOption3() {
-		action.sendKeysElement(enteroption3, "RR");
+		action.sendKeysElement(enteroption3, "Neutral");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 4\"]")
 	private WebElement enteroption4;
 
 	public void EnterOption4() {
-		action.sendKeysElement(enteroption4, "RCB");
+		action.sendKeysElement(enteroption4, "Neutral");
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Select Item\"])[1]/android.widget.TextView")
@@ -173,21 +177,21 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 	private WebElement enterSecondQues;
 
 	public void EnterSecondQuestion() {
-		action.sendKeysElement(enterSecondQues, "Who won the ipl 2023?");
+		action.sendKeysElement(enterSecondQues, "Are you working in week ends?");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 1\"]")
 	private WebElement enterSecondQuestionoption1;
 
 	public void EnterSecondOption1() {
-		action.sendKeysElement(enterSecondQuestionoption1, "CSK");
+		action.sendKeysElement(enterSecondQuestionoption1, "Yes");
 	}
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Option 2\"]")
 	private WebElement enterSecondQuestionoption2;
 
 	public void EnterSecondOption2() {
-		action.sendKeysElement(enterSecondQuestionoption2, "GT");
+		action.sendKeysElement(enterSecondQuestionoption2, "No");
 	}
 
 	// again call swipe by coordinates method using these 504,2017,487,614
@@ -217,7 +221,7 @@ public class CompanyCreateaSurveyNew extends AbstractComponent {
 	private WebElement enterThirdQues;
 
 	public void EnterThirdQuestion() {
-		action.sendKeysElement(enterThirdQues, "Who Won The Orange Cap in IPL 2024?");
+		action.sendKeysElement(enterThirdQues, "What areas do you think need improvement within the organization?");
 	}
 
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Select Item\"])[1]/android.widget.TextView")

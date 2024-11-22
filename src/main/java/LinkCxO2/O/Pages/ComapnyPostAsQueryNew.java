@@ -39,7 +39,7 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 
 //	absCom.swipDownByCoordinates(517, 2122, 454);
 //	testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"New testing Company @@@@, SFGDFGDGFDGDG, SFDFGDGD\"]/android.widget.TextView[1]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Apmosys\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
@@ -67,17 +67,21 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 	{
 		action.clickElement(selectCateg);
 	}
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
-	public void SelectCategoryfromDropdown()
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confimBtnPOll;
+	public void SelectCategoryfromDropdown() throws InterruptedException
 	{
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confimBtnPOll);
 	}
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter your question\"]")
 	private WebElement enterQues;
 	public void EnterQuestion()
 	{
-		action.sendKeysElement(enterQues, "For Testing Query in Company Page");
+		action.sendKeysElement(enterQues, "Which emerging technology do you think will have the greatest impact on reducing your organization’s environmental footprint?");
 	}
 	
 	
@@ -94,7 +98,10 @@ public class ComapnyPostAsQueryNew extends AbstractComponent {
 	private WebElement enterDescr;
 	public void EnterDescription()
 	{
-		action.sendKeysElement(enterDescr, "Testing");
+		action.sendKeysElement(enterDescr, "Carbon capture and storage (CCS)\r\n"
+				+ "Internet of Things for monitoring\r\n"
+				+ "Green hydrogen production\r\n"
+				+ "Advanced recycling technologies");
 	}
 	
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Post Your Query\"]")

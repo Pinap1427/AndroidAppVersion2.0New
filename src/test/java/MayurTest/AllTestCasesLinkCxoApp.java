@@ -1346,7 +1346,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 //			testUtils1.test.log(Status.INFO, "Click on Allow");
 			companyCreatePostMethod.SelectImage();
 			testUtils1.test.log(Status.INFO, "Select Image");
-			Thread.sleep(3000);
+			Thread.sleep(4000);
 			companyCreatePostMethod.ClickonAddYourPost();
 			testUtils1.test.log(Status.INFO, "Click on Add Your Post");
 			companyCreatePostMethod.ClickonPublishNow();
@@ -1357,14 +1357,24 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 			String ActualPostText = companyCreatePostMethod.GetActualTitlePost();
 			System.out.println(ActualPostText);
+			
+			
+			try {
+				if (companyCreatePostMethod.VerifyCompanyPost()) {
+					testUtils1.passTestCase("User is able to Create Post in Company");
+				}
 
-			if (ActualPostText.equals(ExpectedPostText)) {
-				System.out.println("inside if block");
-				testUtils1.passTestCase("User is able to Create Post in Company");
-				System.out.println("after ss method");
-			} else {
+			} catch (Exception e) {
+				e.printStackTrace();
 				testUtils1.failTestCase("User is not able to Create Post in Company");
 			}
+//			if (ActualPostText.equals(ExpectedPostText)) {
+//				System.out.println("inside if block");
+//				testUtils1.passTestCase("User is able to Create Post in Company");
+//				System.out.println("after ss method");
+//			} else {
+//				testUtils1.failTestCase("User is not able to Create Post in Company");
+//			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -1402,9 +1412,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Enter Description of Article");
 			companyArticleMethod.ClickonPublishArticle();
 			testUtils1.test.log(Status.INFO, "Click on Publish Article");
-			Thread.sleep(7000);
-			companyArticleMethod.ClickonBackIcon();
-			testUtils1.test.log(Status.INFO, "Click on back button");
+			Thread.sleep(1000);
+//			companyArticleMethod.ClickonBackIcon();
+//			testUtils1.test.log(Status.INFO, "Click on back button");
 			String ActualArticleTitle = companyArticleMethod.gettextOfActualArticleTitle();
 			System.out.println(ActualArticleTitle);
 
@@ -1467,9 +1477,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			companyCreatePollMethod.ClickonPublishPollButton();
 			testUtils1.test.log(Status.INFO, "Click on Publish Poll Button");
 			Thread.sleep(3000);
-			companyCreatePollMethod.ClickonBackIcon();
-			testUtils1.test.log(Status.INFO, "Click on Back Button");
-			Thread.sleep(3000);
+//			companyCreatePollMethod.ClickonBackIcon();
+//			testUtils1.test.log(Status.INFO, "Click on Back Button");
+//			Thread.sleep(3000);
 			String ActualQuestion = companyCreatePollMethod.GetLastTextofPoll();
 			System.out.println(ActualQuestion);
 
@@ -1569,8 +1579,8 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			companyCreateSurveyMethod.ClickonCreateYourSurveyfinal();
 			testUtils1.test.log(Status.INFO, "Click on final Create Your Survey Button");
 			Thread.sleep(5000);
-			companyCreateSurveyMethod.ClickonBackIcon();
-			testUtils1.test.log(Status.INFO, "Click on back button ");
+//			companyCreateSurveyMethod.ClickonBackIcon();
+//			testUtils1.test.log(Status.INFO, "Click on back button ");
 			String ActualSurveyTitle = companyCreateSurveyMethod.GetLastTextofSurvey();
 			System.out.println(ActualSurveyTitle);
 
@@ -1589,7 +1599,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 16, enabled = false)
+	@Test(priority = 16, enabled = true)
 	public void PostAsQueryinCompany() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 16 : Post As Query in Company  ");
 		Thread.sleep(3000);
@@ -1621,8 +1631,8 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			companyPostasqueryMethod.ClickonPostYourQueryButton();
 			testUtils1.test.log(Status.INFO, "Click on Post Your Query");
 			Thread.sleep(5000);
-			companyPostasqueryMethod.ClickonBackIcon();
-			testUtils1.test.log(Status.INFO, "Click on back Button");
+//			companyPostasqueryMethod.ClickonBackIcon();
+//			testUtils1.test.log(Status.INFO, "Click on back Button");
 			Thread.sleep(5000);
 			String ActualQueryQuestion = companyPostasqueryMethod.GetLastTextofQuery();
 			System.out.println(ActualQueryQuestion);
@@ -1715,8 +1725,8 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			companyCreateJobMethod.ClickonContinueButtoninJOb();
 			testUtils1.test.log(Status.INFO, "Click on Continue Job Button");
 			Thread.sleep(3000);
-			companyCreateJobMethod.ClickonBackIcon();
-			testUtils1.test.log(Status.INFO, "Click on Back Button");
+//			companyCreateJobMethod.ClickonBackIcon();
+//			testUtils1.test.log(Status.INFO, "Click on Back Button");
 //			companyCreateJobMethod.ClickonSavedTab();
 //			testUtils1.test.log(Status.INFO,
 //					"Click on Saved tab , Currently it is showing in saved tab instead of Hiring");

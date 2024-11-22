@@ -38,7 +38,7 @@ public class CompanyCreatePollNew extends AbstractComponent {
 
 //	absCom.swipDownByCoordinates(517, 2122, 454);
 //	testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"New testing Company @@@@, SFGDFGDGFDGDG, SFDFGDGD\"]/android.widget.TextView[1]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Apmosys\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
@@ -76,12 +76,18 @@ public class CompanyCreatePollNew extends AbstractComponent {
 		action.clickElement(selectCateg);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
+	private WebElement confimBtnPOll;
 
-	public void SelectCategoryfromDropdown() {
+	public void SelectCategoryfromDropdown() throws InterruptedException {
 		action.clickElement(SelectCategoryfromdd);
+		Thread.sleep(1000);
+		action.clickElement(confimBtnPOll);
 	}
+	
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Add Question\"]")
 	private WebElement enterQues;

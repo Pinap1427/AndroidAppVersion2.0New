@@ -1,12 +1,15 @@
 package LinkCxO2.O.Pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import AbstractComponents.AbstractComponent;
 import LinkCxO2.O.Utils.ActionKeywords;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class CompanyComposeAnArticle extends AbstractComponent{
 	
@@ -38,7 +41,7 @@ public class CompanyComposeAnArticle extends AbstractComponent{
 
 //	absCom.swipDownByCoordinates(517, 2122, 454);
 //	testUtils1.test.log(Status.INFO, "Swipe down By Co Ordinates");
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"New testing Company @@@@, SFGDFGDGFDGDG, SFDFGDGD\"]/android.widget.TextView[1]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Apmosys\"]")
 	private WebElement CompanyClick;
 
 	public void ClickonCompanyFromList() {
@@ -73,7 +76,7 @@ public class CompanyComposeAnArticle extends AbstractComponent{
 		action.clickElement(allowBtn);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"download.jpeg\"]")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1200x628-DeepLearning-videojpg.jpg, 40.81 kB, Aug 20\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]")
 	private WebElement selectImg;
 
 	public void SelectImage() {
@@ -93,11 +96,22 @@ public class CompanyComposeAnArticle extends AbstractComponent{
 		return gettextOfArticleTitle.getText();
 	}
 
-	@FindBy(xpath = "//android.widget.EditText[@text=\"Unlock Your Professional Voice and Begin Networking with Top Executives Today!\"]")
+	@FindBy(xpath = "//android.widget.EditText[ @text='Start Entering Here']")
 	private WebElement descr;
+	//992,2013
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.widget.EditText")
+	private WebElement finalDescr;
 
-	public void EnterDescription() {
-		action.sendKeysElement(descr, "For Testing Purpose");
+	public void EnterDescription() throws InterruptedException {
+		action.sendKeysElement(descr, "For Testing Purpose a");
+		Thread.sleep(1000);
+		action.clickElement(finalDescr);
+		Thread.sleep(1000);
+		TouchAction action=new TouchAction(driver);
+		action.tap(PointOption.point(992, 2017)).perform();
+		Thread.sleep(2000);
+	
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Publish Your Article\"]")
