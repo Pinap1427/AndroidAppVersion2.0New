@@ -64,30 +64,28 @@ import jdk.internal.org.jline.utils.Log;
 
 public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 	private long startTime;
-	
-	@BeforeMethod
-    public void beforeMethod() {
-        startTime = System.nanoTime();
-    }
 
-    @AfterMethod
-    public void afterMethod() {
+	@BeforeMethod
+	public void beforeMethod() {
+		startTime = System.nanoTime();
+	}
+
+	@AfterMethod
+	public void afterMethod() {
 //        long endTime = System.nanoTime();
 //        long duration = (endTime - startTime) / 1_000_000_000; // Convert from nanoseconds to seconds
 //        System.out.println("Test case execution time: " + duration + " seconds");
-        
-    	 long endTime = System.nanoTime();
-         long durationInNanos = endTime - startTime;
-         long durationInSeconds = durationInNanos / 1_000_000_000; // Convert from nanoseconds to seconds
-         
-         long minutes = durationInSeconds / 60;
-         long seconds = durationInSeconds % 60;
 
-         System.out.printf("Test case execution time: %d minutes and %d seconds%n", minutes, seconds);
-        
-    }
+		long endTime = System.nanoTime();
+		long durationInNanos = endTime - startTime;
+		long durationInSeconds = durationInNanos / 1_000_000_000; // Convert from nanoseconds to seconds
 
+		long minutes = durationInSeconds / 60;
+		long seconds = durationInSeconds % 60;
 
+		System.out.printf("Test case execution time: %d minutes and %d seconds%n", minutes, seconds);
+
+	}
 
 	@Override
 	public void TestBase() throws IOException {
@@ -197,7 +195,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	@Test(priority = 1, enabled = true)
 	public void LoginInWithEmailid() throws IOException, InterruptedException {
-		////////Login with Email id /////////
+		//////// Login with Email id /////////
 		testUtils1.extentReport();
 		testUtils1.testCaseCreate("TC 1 : Login With Email id ");
 		Thread.sleep(3000);
@@ -237,40 +235,231 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 2, enabled = false)
+	@Test(priority = 2, enabled = true)
 	public void CreatePost() throws InterruptedException, IOException, AWTException {
 
-		testUtils1.testCaseCreate("TC 2 : Create Post ");
-		Thread.sleep(3000);
-		createpostMethod.ClickonPlusIcon();
-		testUtils1.test.log(Status.INFO, "Click on Plus Icon");
-
-		createpostMethod.ClickonCreatePost();
-		testUtils1.test.log(Status.INFO, "Click on Create Post");
-		String CreatePostDesc = excel.getCellData(1, 5);
-		createpostMethod.EnterTextForPOst(CreatePostDesc);
-		testUtils1.test.log(Status.INFO, "Enter Text ");
-		createpostMethod.ClickonPhotosIcon();
-		testUtils1.test.log(Status.INFO, "Click on Photos icon");
-		Thread.sleep(3000);
-//		createpostMethod.EnterBtn();
-		createpostMethod.SelectImage();
-		testUtils1.test.log(Status.INFO, "Select Image");
-		Thread.sleep(3000);
-		createpostMethod.ClickonAddYourPost();
-		testUtils1.test.log(Status.INFO, "Click on Add Your Post");
-		createpostMethod.ClickonPublishNow();
-		testUtils1.test.log(Status.INFO, "Click on Publish Now");
-		Thread.sleep(4000);
 		try {
-			if (createpostMethod.VerifyPostCreatedorNOt()) {
 
-				testUtils1.passTestCase("User is able to Create Post");
+			testUtils1.testCaseCreate("TC 2 A : Create Post ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonPlusIcon();
+			testUtils1.test.log(Status.INFO, "Click on Plus Icon");
 
+			createpostMethod.ClickonCreatePost();
+			testUtils1.test.log(Status.INFO, "Click on Create Post");
+			String CreatePostDesc = excel.getCellData(1, 5);
+			createpostMethod.EnterTextForPOst(CreatePostDesc);
+			testUtils1.test.log(Status.INFO, "Enter Text ");
+			createpostMethod.ClickonPhotosIcon();
+			testUtils1.test.log(Status.INFO, "Click on Photos icon");
+			Thread.sleep(3000);
+//		createpostMethod.EnterBtn();
+			createpostMethod.SelectImage();
+			testUtils1.test.log(Status.INFO, "Select Image");
+			Thread.sleep(4000);
+			createpostMethod.ClickonAddYourPost();
+			testUtils1.test.log(Status.INFO, "Click on Add Your Post");
+			createpostMethod.ClickonPublishNow();
+			testUtils1.test.log(Status.INFO, "Click on Publish Now");
+			Thread.sleep(4000);
+			try {
+				if (createpostMethod.VerifyPostCreatedorNOt()) {
+
+					testUtils1.passTestCase("User is able to Create Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Create Post");
 			}
-		} catch (IOException e) {
+			//////////// Post like//////////
+			testUtils1.testCaseCreate("TC 2 B : Post Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Post");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 2 C : Post DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Post");
+			}
+
+			//////// Post Comment///////////////
+			testUtils1.testCaseCreate("TC 2 D : Post Comment ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonComment();
+			testUtils1.test.log(Status.INFO, "Click on Comment button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Comment on Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Comment on Post");
+			}
+
+			/////////// Comment Like Dislike///////
+			testUtils1.testCaseCreate("TC 2 E :Comment Like and Dislike ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Post");
+			}
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Post");
+			}
+
+////////////comment Reply////////
+			testUtils1.testCaseCreate("TC 2 F :Comment Reply ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonReplyButton();
+			testUtils1.test.log(Status.INFO, "Click on Reply button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Reply Comment on Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Reply Comment on Post");
+			}
+			///////// Comment Edit///
+			testUtils1.testCaseCreate("TC 2 G :Comment Edit ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.CliconEdit();
+			testUtils1.test.log(Status.INFO, "Click on Edit button");
+			createpostMethod.EnterEditedComment();
+			testUtils1.test.log(Status.INFO, "Enter Edited Comment");
+			createpostMethod.ClickonSendCommentBtnEdited();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+
+			try {
+				if (createpostMethod.VerifyEditedComment()) {
+
+					testUtils1.passTestCase("User is able to Edit Comment on Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit Comment on Post");
+			}
+			////// Delete Comment////
+			testUtils1.testCaseCreate("TC 2 H:Comment Delete ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.ClickonDeleteButton();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+
+			try {
+				if (createpostMethod.VeiryCommentisDeleted()) {
+
+					testUtils1.passTestCase("User is able to Delete Comment on Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Comment on Post");
+			}
+			//////////Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 2 I:Post Share on Feed");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			createpostMethod.ClickonShareButton();
+			testUtils1.test.log(Status.INFO, "Click on Share button");
+			createpostMethod.ClickononFeed();
+			testUtils1.test.log(Status.INFO, "Click on On Feed button");
+			createpostMethod.EnterRepostDescription();
+			testUtils1.test.log(Status.INFO, "Enter Repost Description");
+			createpostMethod.ClickonPostButton();
+			testUtils1.test.log(Status.INFO, "Click on Post button");
+			Thread.sleep(3000);
+			try {
+				if (createpostMethod.VerifyPostRepost()) {
+
+					testUtils1.passTestCase("User is able to Repost Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Repost Post");
+			}
+	//////////Post Share on Feed//////////
+				testUtils1.testCaseCreate("TC 2 J:Post Delete");
+				Thread.sleep(2000);
+				createpostMethod.ClickonThreeDotRepost();
+				testUtils1.test.log(Status.INFO, "Click on Three dot button");
+				createpostMethod.ClickonDeleteButtonRepost();
+				testUtils1.test.log(Status.INFO, "Click on Delete button");
+				Thread.sleep(2000);
+				try {
+					if (createpostMethod.verifyPostisDeleted()) {
+
+						testUtils1.passTestCase("User is able to Delete Post");
+
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+					testUtils1.failTestCase("User is not able to Delete Post");
+				}
+			
+		} catch (Exception e) {
 			e.printStackTrace();
-			testUtils1.failTestCase("User is not able to Create Post");
+			testUtils1.failTestCase("User is not able to Perform Create Post Sub Testcases, TestCase Failed");
+
 		}
 
 	}
@@ -1003,7 +1192,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Click pon Add Image");
 			newEventCreateMethod.SelectImage();
 			testUtils1.test.log(Status.INFO, "Select Image to Upload");
-			String EventTitle=excel.getCellData(1, 26);
+			String EventTitle = excel.getCellData(1, 26);
 			newEventCreateMethod.EnterEventTitle(EventTitle);
 			testUtils1.test.log(Status.INFO, "Enter Event Title");
 			newEventCreateMethod.ClickonSelectIndustry();
@@ -1023,7 +1212,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			newEventCreateMethod.ClickonConfirmButton();
 			testUtils1.test.log(Status.INFO, "Click on Confirm Button");
 			Thread.sleep(2000);
-			String EventDetails=excel.getCellData(1, 27);
+			String EventDetails = excel.getCellData(1, 27);
 			newEventCreateMethod.EnterEventDetails(EventDetails);
 			testUtils1.test.log(Status.INFO, "Enter Event Details");
 			newEventCreateMethod.ClickonCreateMyEvent();
@@ -1035,7 +1224,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Select Host Type");
 			newEventCreateMethod.ClickonOfflineRadioButton();
 			testUtils1.test.log(Status.INFO, "Click on Offline Radio Button");
-			String EventVenue=excel.getCellData(1, 28);
+			String EventVenue = excel.getCellData(1, 28);
 			newEventCreateMethod.EnterLocation(EventVenue);
 			testUtils1.test.log(Status.INFO, "Enter Event Location");
 			newEventCreateMethod.SelectCurrency();
@@ -1107,18 +1296,18 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		testUtils1.test.log(Status.INFO, "Click on Add Image");
 		newClubCreateMethod.SelectImage();
 		testUtils1.test.log(Status.INFO, "Select Image");
-		String ClubTitle=excel.getCellData(1, 30);
+		String ClubTitle = excel.getCellData(1, 30);
 		newClubCreateMethod.EnterClubTitle(ClubTitle);
 		testUtils1.test.log(Status.INFO, "Enter Club Title");
 		String ExpectedClubTitle = newClubCreateMethod.ExpectedGettexTitle();
 		System.out.println(ExpectedClubTitle);
-		String ClubDetails=excel.getCellData(1, 31);
+		String ClubDetails = excel.getCellData(1, 31);
 		newClubCreateMethod.EnterClubDetails(ClubDetails);
 		testUtils1.test.log(Status.INFO, "Enter Club Details");
 //		add scroll down 
 		Thread.sleep(2000);
 		absCom.swipDownByCoordinates(521, 2122, 664);
-		
+
 		newClubCreateMethod.SelectCurrency();
 		testUtils1.test.log(Status.INFO, "Select Currency");
 		newClubCreateMethod.EnterAmount();
@@ -1216,7 +1405,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Select Max Exp from Dropdown");
 //			newJobCreateMethod.SelectCurrency();///currently salary is auto selected as INR
 //			testUtils1.test.log(Status.INFO, "Select Currency from Dropdown");
-			newJobCreateMethod.ClickonSalary();  
+			newJobCreateMethod.ClickonSalary();
 			testUtils1.test.log(Status.INFO, "Click on Min Salary");
 			newJobCreateMethod.SelectMinSalary();
 			testUtils1.test.log(Status.INFO, "Select Min Salary from Dropdown");
@@ -1273,8 +1462,8 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Click on Apply Job");
 //			newJobApplyMethod.EnterEmailid();
 //			testUtils1.test.log(Status.INFO, "Enter Email id ");
-			
-			//////////////For Old User Comment for new Uncomment//////////
+
+			////////////// For Old User Comment for new Uncomment//////////
 //			newJobApplyMethod.SelectSalaryFromDD();
 //			testUtils1.test.log(Status.INFO, "Select Salary From Dropdown");
 //			newJobApplyMethod.ClickonSelectIndustry();
@@ -1357,8 +1546,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 			String ActualPostText = companyCreatePostMethod.GetActualTitlePost();
 			System.out.println(ActualPostText);
-			
-			
+
 			try {
 				if (companyCreatePostMethod.VerifyCompanyPost()) {
 					testUtils1.passTestCase("User is able to Create Post in Company");
@@ -1599,7 +1787,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 16, enabled = true)
+	@Test(priority = 16, enabled = false)
 	public void PostAsQueryinCompany() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 16 : Post As Query in Company  ");
 		Thread.sleep(3000);
@@ -1668,7 +1856,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 			companyCreateJobMethod.ClickonJobsbuttoninCompanyPage();
 			;
-			testUtils1.test.log(Status.INFO, "Click on Jobs buttin");
+			testUtils1.test.log(Status.INFO, "Click on Jobs button");
 			Thread.sleep(2000);
 			companyCreateJobMethod.ClickonPlusIcon();
 			testUtils1.test.log(Status.INFO, "Click on Plus Icon");

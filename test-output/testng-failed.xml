@@ -5,11 +5,12 @@
     <classes>
       <class name="MayurTest.AllTestCasesLinkCxoApp">
         <methods>
+          <include name="CreatePost"/>
           <include name="beforeMethod"/>
-          <include name="CreateClub"/>
           <include name="afterMethod"/>
           <include name="SetUp"/>
           <include name="tearDown"/>
+          <include name="CreatePostinCompany"/>
         </methods>
       </class> <!-- MayurTest.AllTestCasesLinkCxoApp -->
     </classes>

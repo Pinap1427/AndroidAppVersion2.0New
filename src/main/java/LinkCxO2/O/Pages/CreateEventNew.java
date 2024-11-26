@@ -53,7 +53,7 @@ public class CreateEventNew extends AbstractComponent {
 	}
 
 //	@FindBy(xpath = "//android.widget.TextView[@text=\"testimg.jpeg\"]")
-	@FindBy(xpath = "(//android.widget.ImageView)[9]")  //3rd image will be selected
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1200x628-DeepLearning-videojpg.jpg, 40.81 kB, Aug 20\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]")  //3rd image will be selected
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
@@ -220,7 +220,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(startDate);
 	}
 
-	@FindBy(xpath = "//android.view.View[@text=\"31\"]")
+	@FindBy(xpath = "//android.view.View[@text=\"30\"]")
 	private WebElement selectDatefromcal;
 
 	@FindBy(id = "android:id/button1")
@@ -301,7 +301,7 @@ public class CreateEventNew extends AbstractComponent {
 	private WebElement emailEnter;
 
 	public void EnterEmail() {
-		action.sendKeysElement(emailEnter, "kprabhat956@gmail.com");
+		action.sendKeysElement(emailEnter, "joyjovitha48@gmail.com");
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Next\"]")

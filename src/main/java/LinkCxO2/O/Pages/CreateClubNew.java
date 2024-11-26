@@ -50,7 +50,7 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(addimgclk);
 	}
 
-	@FindBy(xpath = "(//android.widget.ImageView)[33]") //first image will be selected
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1200x628-DeepLearning-videojpg.jpg, 40.81 kB, Aug 20\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]") //first image will be selected
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
