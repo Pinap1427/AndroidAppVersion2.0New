@@ -376,6 +376,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			Thread.sleep(2000);
 			createpostMethod.ClickonXButton();
 			testUtils1.test.log(Status.INFO, "Click on X button");
+			Thread.sleep(2000);
 			createpostMethod.ClickonThreeDot();
 			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
 			createpostMethod.CliconEdit();
