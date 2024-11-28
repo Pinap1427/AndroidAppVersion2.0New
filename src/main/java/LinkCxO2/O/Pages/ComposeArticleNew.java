@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import AbstractComponents.AbstractComponent;
 import LinkCxO2.O.Utils.ActionKeywords;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.TouchAction;
+//import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.PointOption;
 
 public class ComposeArticleNew extends AbstractComponent {
 
@@ -45,7 +48,7 @@ public class ComposeArticleNew extends AbstractComponent {
 		action.clickElement(imgClick);
 	}
 
-	@FindBy(xpath = "(//android.widget.ImageView)[6]")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1676909412539.png, 36.01 kB, Oct 21\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]")
 	private WebElement selectImg;
 
 	public void SelectImage() {
@@ -61,13 +64,16 @@ public class ComposeArticleNew extends AbstractComponent {
 
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Start Entering Here\"]")
 	private WebElement descr;
-
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.widget.EditText")
+	private WebElement finalDescr;
 	public void EnterDescription(String ArticleDesc) throws InterruptedException, AWTException {
-		action.clickElement(descr);
+		action.sendKeysElement(descr, "For Testing Purpose a");
+		Thread.sleep(1000);
+		action.clickElement(finalDescr);
+		Thread.sleep(1000);
+		TouchAction action=new TouchAction(driver);
+		action.tap(PointOption.point(992, 2017)).perform();
 		Thread.sleep(2000);
-		action.sendKeysElement(descr, ArticleDesc);
-//		Thread.sleep(2000);
-//		action.sendKeysElement(EditArticle, "aa");
 	}
 	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.ViewGroup/android.widget.FrameLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.widget.EditText")
@@ -80,10 +86,31 @@ public class ComposeArticleNew extends AbstractComponent {
 	public void ClickonPublishArticle() {
 		action.clickElement(publish);
 	}
-	@FindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Alternate LxText\"])[2]")
+	@FindBy(xpath = "(//android.widget.TextView)[7]")
 	private WebElement verifyArticle;
 	public boolean VerifyArticlePostedorNot()
 	{
 		return action.isDisplay(verifyArticle);
 	}
+	
+	//////////Article View /////////
+	public void ClickonArticle()
+	{
+		action.clickElement(verifyArticle);
+	}
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ImageView")
+	private WebElement verifyViewArticle;
+	public boolean VerifyViewArticlePostedorNot()
+	{
+		return action.isDisplay(verifyViewArticle);
+	}
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement backBtn;
+	public void ClickonBackButtn()
+	{
+		action.clickElement(backBtn);
+	}
+	
 }
