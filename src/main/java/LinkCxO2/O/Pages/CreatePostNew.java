@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.Status;
+
 import AbstractComponents.AbstractComponent;
 import LinkCxO2.O.Utils.ActionKeywords;
 import io.appium.java_client.MobileElement;
@@ -67,12 +69,15 @@ public class CreatePostNew extends AbstractComponent {
 	}
 
 //	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1717653192935.jpg, 120 kB, Jul 5\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView")
-	@FindBy(xpath = "(//android.widget.ImageView)[3]")
+//	@FindBy(xpath = "(//android.widget.ImageView)[3]")
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1200x628-DeepLearning-videojpg.jpg, 40.81 kB, Aug 20\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]")
 	private WebElement selectImg;
-
+public void AllowBtn()
+{
+	action.clickElement(allowBtn);
+}
 	public void SelectImage() throws InterruptedException {
-		action.clickElement(allowBtn);
-		Thread.sleep(3000);
+//		testUtils1.test.log(Status.INFO, "Swip down by co ordinates");
 		action.clickElement(selectImg);
 	}
 
@@ -242,6 +247,8 @@ public class CreatePostNew extends AbstractComponent {
 	public boolean VeiryCommentisDeleted() {
 		return action.isDisplay(VerifyCommentDeleted);
 	}
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Answers\"]")
+	private WebElement verifyCmntDel;
 
 	/////////// Post Share on Feed/////////////
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"0 Shares\"]/android.widget.TextView")

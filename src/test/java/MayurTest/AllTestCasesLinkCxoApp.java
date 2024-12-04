@@ -252,11 +252,18 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.test.log(Status.INFO, "Enter Text ");
 			createpostMethod.ClickonPhotosIcon();
 			testUtils1.test.log(Status.INFO, "Click on Photos icon");
+			Thread.sleep(2000);
+			createpostMethod.AllowBtn();
+			testUtils1.test.log(Status.INFO, "Click on Allow Button");
 			Thread.sleep(3000);
-//		createpostMethod.EnterBtn();
+			absCom.swipDownByCoordinates(508, 2000, 546);
+			testUtils1.test.log(Status.INFO, "Swip down by co ordinates");
+			Thread.sleep(2000);
+			absCom.swipDownByCoordinates(508, 2000, 546);
+			testUtils1.test.log(Status.INFO, "Swip down by co ordinates");
 			createpostMethod.SelectImage();
 			testUtils1.test.log(Status.INFO, "Select Image");
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 			createpostMethod.ClickonAddYourPost();
 			testUtils1.test.log(Status.INFO, "Click on Add Your Post");
 			createpostMethod.ClickonPublishNow();
@@ -500,210 +507,212 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				e.printStackTrace();
 				testUtils1.failTestCase("User is not able to compose Article");
 			}
-			
+
 ////////////Post like//////////
-				testUtils1.testCaseCreate("TC 3 B : Article Like ");
-				Thread.sleep(3000);
-				createpostMethod.ClickonLikePost();
-				testUtils1.test.log(Status.INFO, "Click on Like button");
-				try {
-					if (createpostMethod.VerifyLikedPost()) {
+			testUtils1.testCaseCreate("TC 3 B : Article Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
 
-						testUtils1.passTestCase("User is able to Like Article");
+					testUtils1.passTestCase("User is able to Like Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Like Article");
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Article");
+			}
 
-				//////////// Post Dislike//////////
-				testUtils1.testCaseCreate("TC 3 C : Article DisLike ");
-				Thread.sleep(3000);
-				createpostMethod.ClickonDisLikePost();
-				testUtils1.test.log(Status.INFO, "Click on DisLike button");
-				try {
-					if (createpostMethod.VerifyDislikeLikedPost()) {
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 3 C : Article DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
 
-						testUtils1.passTestCase("User is able to DisLike Article");
+					testUtils1.passTestCase("User is able to DisLike Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to DisLike Article");
 				}
-				/////////article view/////////
-				testUtils1.testCaseCreate("TC 3 D : Article View ");
-				Thread.sleep(3000);
-				composeArticleMethod.ClickonArticle();
-				testUtils1.test.log(Status.INFO, "Click on Article ");
-				try {
-					if (composeArticleMethod.VerifyViewArticlePostedorNot()) {
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Article");
+			}
+			///////// article view/////////
+			testUtils1.testCaseCreate("TC 3 D : Article View ");
+			Thread.sleep(3000);
+			composeArticleMethod.ClickonArticle();
+			testUtils1.test.log(Status.INFO, "Click on Article ");
+			try {
+				if (composeArticleMethod.VerifyViewArticlePostedorNot()) {
 
-						testUtils1.passTestCase("User is able to View Article");
+					testUtils1.passTestCase("User is able to View Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to View Article");
 				}
-				
-				composeArticleMethod.ClickonBackButtn();
-				testUtils1.test.log(Status.INFO, "Click on Back Button ");
-				Thread.sleep(3000);
-				
-		//////// Post Comment///////////////
-				testUtils1.testCaseCreate("TC 3 E : Post Comment ");
-				Thread.sleep(3000);
-				createpostMethod.ClickonComment();
-				testUtils1.test.log(Status.INFO, "Click on Comment button");
-				createpostMethod.EnterComment();
-				testUtils1.test.log(Status.INFO, "Enter Comment");
-				createpostMethod.ClickonSendButton();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
-				try {
-					if (createpostMethod.VerifyComment()) {
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to View Article");
+			}
 
-						testUtils1.passTestCase("User is able to Comment on Article");
+			composeArticleMethod.ClickonBackButtn();
+			testUtils1.test.log(Status.INFO, "Click on Back Button ");
+			Thread.sleep(3000);
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Comment on Article");
+			//////// Post Comment///////////////
+			testUtils1.testCaseCreate("TC 3 E : Post Comment ");
+			Thread.sleep(3000);
+//			surveyCreateMethod.ClickonBackButtn();
+//			testUtils1.test.log(Status.INFO, "Click on X Button");
+			createpostMethod.ClickonComment();
+			testUtils1.test.log(Status.INFO, "Click on Comment button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Comment on Article");
+
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Comment on Article");
+			}
 
-				/////////// Comment Like Dislike///////
-				testUtils1.testCaseCreate("TC 3 F :Comment Like and Dislike ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonLikePost();
-				testUtils1.test.log(Status.INFO, "Click on Like button");
-				try {
-					if (createpostMethod.VerifyLikedPost()) {
+			/////////// Comment Like Dislike///////
+			testUtils1.testCaseCreate("TC 3 F :Comment Like and Dislike ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
 
-						testUtils1.passTestCase("User is able to Like Article");
+					testUtils1.passTestCase("User is able to Like Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Like Article");
 				}
-				createpostMethod.ClickonDisLikePost();
-				testUtils1.test.log(Status.INFO, "Click on DisLike button");
-				try {
-					if (createpostMethod.VerifyDislikeLikedPost()) {
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Article");
+			}
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
 
-						testUtils1.passTestCase("User is able to DisLike Article");
+					testUtils1.passTestCase("User is able to DisLike Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to DisLike Article");
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Article");
+			}
 
-	////////////comment Reply////////
-				testUtils1.testCaseCreate("TC 3 G :Comment Reply ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonReplyButton();
-				testUtils1.test.log(Status.INFO, "Click on Reply button");
-				createpostMethod.EnterComment();
-				testUtils1.test.log(Status.INFO, "Enter Comment");
-				createpostMethod.ClickonSendButton();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
-				try {
-					if (createpostMethod.VerifyComment()) {
+			//////////// comment Reply////////
+			testUtils1.testCaseCreate("TC 3 G :Comment Reply ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonReplyButton();
+			testUtils1.test.log(Status.INFO, "Click on Reply button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
 
-						testUtils1.passTestCase("User is able to Reply Comment on Article");
+					testUtils1.passTestCase("User is able to Reply Comment on Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Reply Comment on Article");
 				}
-				///////// Comment Edit///
-				testUtils1.testCaseCreate("TC 3 H :Comment Edit ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonXButton();
-				testUtils1.test.log(Status.INFO, "Click on X button");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDot();
-				testUtils1.test.log(Status.INFO, "Click on Three Dot button");
-				createpostMethod.CliconEdit();
-				testUtils1.test.log(Status.INFO, "Click on Edit button");
-				createpostMethod.EnterEditedComment();
-				testUtils1.test.log(Status.INFO, "Enter Edited Comment");
-				createpostMethod.ClickonSendCommentBtnEdited();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Reply Comment on Article");
+			}
+			///////// Comment Edit///
+			testUtils1.testCaseCreate("TC 3 H :Comment Edit ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.CliconEdit();
+			testUtils1.test.log(Status.INFO, "Click on Edit button");
+			createpostMethod.EnterEditedComment();
+			testUtils1.test.log(Status.INFO, "Enter Edited Comment");
+			createpostMethod.ClickonSendCommentBtnEdited();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
 
-				try {
-					if (createpostMethod.VerifyEditedComment()) {
+			try {
+				if (createpostMethod.VerifyEditedComment()) {
 
-						testUtils1.passTestCase("User is able to Edit Comment on Article");
+					testUtils1.passTestCase("User is able to Edit Comment on Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Edit Comment on Article");
 				}
-				////// Delete Comment////
-				testUtils1.testCaseCreate("TC 3 I:Comment Delete ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDot();
-				testUtils1.test.log(Status.INFO, "Click on Three Dot button");
-				createpostMethod.ClickonDeleteButton();
-				testUtils1.test.log(Status.INFO, "Click on Delete button");
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit Comment on Article");
+			}
+			////// Delete Comment////
+			testUtils1.testCaseCreate("TC 3 I:Comment Delete ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.ClickonDeleteButton();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
 
-				try {
-					if (createpostMethod.VeiryCommentisDeleted()) {
+			try {
+				if (createpostMethod.VeiryCommentisDeleted()) {
 
-						testUtils1.passTestCase("User is able to Delete Comment on Article");
+					testUtils1.passTestCase("User is able to Delete Comment on Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Delete Comment on Article");
 				}
-				////////// Post Share on Feed//////////
-				testUtils1.testCaseCreate("TC 3 J:Article Share on Feed");
-				Thread.sleep(2000);
-				createpostMethod.ClickonXButton();
-				testUtils1.test.log(Status.INFO, "Click on X button");
-				createpostMethod.ClickonShareButton();
-				testUtils1.test.log(Status.INFO, "Click on Share button");
-				createpostMethod.ClickononFeed();
-				testUtils1.test.log(Status.INFO, "Click on On Feed button");
-				createpostMethod.EnterRepostDescription();
-				testUtils1.test.log(Status.INFO, "Enter Repost Description");
-				createpostMethod.ClickonPostButton();
-				testUtils1.test.log(Status.INFO, "Click on Post button");
-				Thread.sleep(3000);
-				try {
-					if (createpostMethod.VerifyPostRepost()) {
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Comment on Article");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 3 J:Article Share on Feed");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			createpostMethod.ClickonShareButton();
+			testUtils1.test.log(Status.INFO, "Click on Share button");
+			createpostMethod.ClickononFeed();
+			testUtils1.test.log(Status.INFO, "Click on On Feed button");
+			createpostMethod.EnterRepostDescription();
+			testUtils1.test.log(Status.INFO, "Enter Repost Description");
+			createpostMethod.ClickonPostButton();
+			testUtils1.test.log(Status.INFO, "Click on Post button");
+			Thread.sleep(3000);
+			try {
+				if (createpostMethod.VerifyPostRepost()) {
 
-						testUtils1.passTestCase("User is able to Repost Article");
+					testUtils1.passTestCase("User is able to Repost Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Repost Article");
 				}
-				////////// Post Share on Feed//////////
-				testUtils1.testCaseCreate("TC 3 K:Article Delete");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDotRepost();
-				testUtils1.test.log(Status.INFO, "Click on Three dot button");
-				createpostMethod.ClickonDeleteButtonRepost();
-				testUtils1.test.log(Status.INFO, "Click on Delete button");
-				Thread.sleep(2000);
-				try {
-					if (createpostMethod.verifyPostisDeleted()) {
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Repost Article");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 3 K:Article Delete");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDotRepost();
+			testUtils1.test.log(Status.INFO, "Click on Three dot button");
+			createpostMethod.ClickonDeleteButtonRepost();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+			Thread.sleep(2000);
+			try {
+				if (createpostMethod.verifyPostisDeleted()) {
 
-						testUtils1.passTestCase("User is able to Delete Article");
+					testUtils1.passTestCase("User is able to Delete Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Delete Article");
 				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Article");
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -711,7 +720,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 4, enabled = true)
+	@Test(priority = 4, enabled = false)
 	public void CreatePoll() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 4 A: Create Poll ");
 		Thread.sleep(1000);
@@ -762,40 +771,39 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			e.printStackTrace();
 			testUtils1.failTestCase("User is not able to Create Poll");
 		}
-		
-		
+
 ////////////Post like//////////
-			testUtils1.testCaseCreate("TC 4 B : Poll Like ");
-			Thread.sleep(3000);
-			createpostMethod.ClickonLikePost();
-			testUtils1.test.log(Status.INFO, "Click on Like button");
-			try {
-				if (createpostMethod.VerifyLikedPost()) {
+		testUtils1.testCaseCreate("TC 4 B : Poll Like ");
+		Thread.sleep(3000);
+		createpostMethod.ClickonLikePost();
+		testUtils1.test.log(Status.INFO, "Click on Like button");
+		try {
+			if (createpostMethod.VerifyLikedPost()) {
 
-					testUtils1.passTestCase("User is able to Like Poll");
+				testUtils1.passTestCase("User is able to Like Poll");
 
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-				testUtils1.failTestCase("User is not able to Like Poll");
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Like Poll");
+		}
 
-			//////////// Post Dislike//////////
-			testUtils1.testCaseCreate("TC 4 C : Poll DisLike ");
-			Thread.sleep(3000);
-			createpostMethod.ClickonDisLikePost();
-			testUtils1.test.log(Status.INFO, "Click on DisLike button");
-			try {
-				if (createpostMethod.VerifyDislikeLikedPost()) {
+		//////////// Post Dislike//////////
+		testUtils1.testCaseCreate("TC 4 C : Poll DisLike ");
+		Thread.sleep(3000);
+		createpostMethod.ClickonDisLikePost();
+		testUtils1.test.log(Status.INFO, "Click on DisLike button");
+		try {
+			if (createpostMethod.VerifyDislikeLikedPost()) {
 
-					testUtils1.passTestCase("User is able to DisLike Poll");
+				testUtils1.passTestCase("User is able to DisLike Poll");
 
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-				testUtils1.failTestCase("User is not able to DisLike Poll");
 			}
-		///////////////Poll Vote /////
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to DisLike Poll");
+		}
+		/////////////// Poll Vote /////
 		testUtils1.testCaseCreate("TC 4 D: Vote Poll ");
 		Thread.sleep(1000);
 		pollCreateMethod.ClickonVoteOption();
@@ -809,160 +817,158 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.failTestCase("User is not able to Vote for Poll");
 		}
 ////////Post Comment///////////////
-				testUtils1.testCaseCreate("TC 4 E : Poll Comment ");
-				Thread.sleep(3000);
-				createpostMethod.ClickonComment();
-				testUtils1.test.log(Status.INFO, "Click on Comment button");
-				createpostMethod.EnterComment();
-				testUtils1.test.log(Status.INFO, "Enter Comment");
-				createpostMethod.ClickonSendButton();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
-				try {
-					if (createpostMethod.VerifyComment()) {
+		testUtils1.testCaseCreate("TC 4 E : Poll Comment ");
+		Thread.sleep(3000);
+		createpostMethod.ClickonComment();
+		testUtils1.test.log(Status.INFO, "Click on Comment button");
+		createpostMethod.EnterComment();
+		testUtils1.test.log(Status.INFO, "Enter Comment");
+		createpostMethod.ClickonSendButton();
+		testUtils1.test.log(Status.INFO, "Click on Send button");
+		try {
+			if (createpostMethod.VerifyComment()) {
 
-						testUtils1.passTestCase("User is able to Comment on Poll");
+				testUtils1.passTestCase("User is able to Comment on Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Comment on Poll");
-				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Comment on Poll");
+		}
 
-				/////////// Comment Like Dislike///////
-				testUtils1.testCaseCreate("TC 4 F :Comment Like and Dislike ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonLikePost();
-				testUtils1.test.log(Status.INFO, "Click on Like button");
-				try {
-					if (createpostMethod.VerifyLikedPost()) {
+		/////////// Comment Like Dislike///////
+		testUtils1.testCaseCreate("TC 4 F :Comment Like and Dislike ");
+		Thread.sleep(2000);
+		createpostMethod.ClickonLikePost();
+		testUtils1.test.log(Status.INFO, "Click on Like button");
+		try {
+			if (createpostMethod.VerifyLikedPost()) {
 
-						testUtils1.passTestCase("User is able to Like Poll");
+				testUtils1.passTestCase("User is able to Like Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Like Poll");
-				}
-				createpostMethod.ClickonDisLikePost();
-				testUtils1.test.log(Status.INFO, "Click on DisLike button");
-				try {
-					if (createpostMethod.VerifyDislikeLikedPost()) {
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Like Poll");
+		}
+		createpostMethod.ClickonDisLikePost();
+		testUtils1.test.log(Status.INFO, "Click on DisLike button");
+		try {
+			if (createpostMethod.VerifyDislikeLikedPost()) {
 
-						testUtils1.passTestCase("User is able to DisLike Poll");
+				testUtils1.passTestCase("User is able to DisLike Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to DisLike Poll");
-				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to DisLike Poll");
+		}
 
-	////////////comment Reply////////
-				testUtils1.testCaseCreate("TC 4 G :Comment Reply ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonReplyButton();
-				testUtils1.test.log(Status.INFO, "Click on Reply button");
-				createpostMethod.EnterComment();
-				testUtils1.test.log(Status.INFO, "Enter Comment");
-				createpostMethod.ClickonSendButton();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
-				try {
-					if (createpostMethod.VerifyComment()) {
+		//////////// comment Reply////////
+		testUtils1.testCaseCreate("TC 4 G :Comment Reply ");
+		Thread.sleep(2000);
+		createpostMethod.ClickonReplyButton();
+		testUtils1.test.log(Status.INFO, "Click on Reply button");
+		createpostMethod.EnterComment();
+		testUtils1.test.log(Status.INFO, "Enter Comment");
+		createpostMethod.ClickonSendButton();
+		testUtils1.test.log(Status.INFO, "Click on Send button");
+		try {
+			if (createpostMethod.VerifyComment()) {
 
-						testUtils1.passTestCase("User is able to Reply Comment on Poll");
+				testUtils1.passTestCase("User is able to Reply Comment on Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Reply Comment on Poll");
-				}
-				///////// Comment Edit///
-				testUtils1.testCaseCreate("TC 4 H :Comment Edit ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonXButton();
-				testUtils1.test.log(Status.INFO, "Click on X button");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDot();
-				testUtils1.test.log(Status.INFO, "Click on Three Dot button");
-				createpostMethod.CliconEdit();
-				testUtils1.test.log(Status.INFO, "Click on Edit button");
-				createpostMethod.EnterEditedComment();
-				testUtils1.test.log(Status.INFO, "Enter Edited Comment");
-				createpostMethod.ClickonSendCommentBtnEdited();
-				testUtils1.test.log(Status.INFO, "Click on Send button");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Reply Comment on Poll");
+		}
+		///////// Comment Edit///
+		testUtils1.testCaseCreate("TC 4 H :Comment Edit ");
+		Thread.sleep(2000);
+		createpostMethod.ClickonXButton();
+		testUtils1.test.log(Status.INFO, "Click on X button");
+		Thread.sleep(2000);
+		createpostMethod.ClickonThreeDot();
+		testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+		createpostMethod.CliconEdit();
+		testUtils1.test.log(Status.INFO, "Click on Edit button");
+		createpostMethod.EnterEditedComment();
+		testUtils1.test.log(Status.INFO, "Enter Edited Comment");
+		createpostMethod.ClickonSendCommentBtnEdited();
+		testUtils1.test.log(Status.INFO, "Click on Send button");
 
-				try {
-					if (createpostMethod.VerifyEditedComment()) {
+		try {
+			if (createpostMethod.VerifyEditedComment()) {
 
-						testUtils1.passTestCase("User is able to Edit Comment on Poll");
+				testUtils1.passTestCase("User is able to Edit Comment on Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Edit Comment on Poll");
-				}
-				////// Delete Comment////
-				testUtils1.testCaseCreate("TC 3 I:Comment Delete ");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDot();
-				testUtils1.test.log(Status.INFO, "Click on Three Dot button");
-				createpostMethod.ClickonDeleteButton();
-				testUtils1.test.log(Status.INFO, "Click on Delete button");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Edit Comment on Poll");
+		}
+		////// Delete Comment////
+		testUtils1.testCaseCreate("TC 3 I:Comment Delete ");
+		Thread.sleep(2000);
+		createpostMethod.ClickonThreeDot();
+		testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+		createpostMethod.ClickonDeleteButton();
+		testUtils1.test.log(Status.INFO, "Click on Delete button");
 
-				try {
-					if (createpostMethod.VeiryCommentisDeleted()) {
+		try {
+			if (createpostMethod.VeiryCommentisDeleted()) {
 
-						testUtils1.passTestCase("User is able to Delete Comment on Article");
+				testUtils1.passTestCase("User is able to Delete Comment on Article");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Delete Comment on Article");
-				}
-				////////// Post Share on Feed//////////
-				testUtils1.testCaseCreate("TC 4 J:Article Share on Feed");
-				Thread.sleep(2000);
-				createpostMethod.ClickonXButton();
-				testUtils1.test.log(Status.INFO, "Click on X button");
-				createpostMethod.ClickonShareButton();
-				testUtils1.test.log(Status.INFO, "Click on Share button");
-				createpostMethod.ClickononFeed();
-				testUtils1.test.log(Status.INFO, "Click on On Feed button");
-				createpostMethod.EnterRepostDescription();
-				testUtils1.test.log(Status.INFO, "Enter Repost Description");
-				createpostMethod.ClickonPostButton();
-				testUtils1.test.log(Status.INFO, "Click on Post button");
-				Thread.sleep(3000);
-				try {
-					if (createpostMethod.VerifyPostRepost()) {
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Delete Comment on Article");
+		}
+		////////// Post Share on Feed//////////
+		testUtils1.testCaseCreate("TC 4 J:Poll Share on Feed");
+		Thread.sleep(2000);
+		createpostMethod.ClickonXButton();
+		testUtils1.test.log(Status.INFO, "Click on X button");
+		createpostMethod.ClickonShareButton();
+		testUtils1.test.log(Status.INFO, "Click on Share button");
+		createpostMethod.ClickononFeed();
+		testUtils1.test.log(Status.INFO, "Click on On Feed button");
+		createpostMethod.EnterRepostDescription();
+		testUtils1.test.log(Status.INFO, "Enter Repost Description");
+		createpostMethod.ClickonPostButton();
+		testUtils1.test.log(Status.INFO, "Click on Post button");
+		Thread.sleep(3000);
+		try {
+			if (createpostMethod.VerifyPostRepost()) {
 
-						testUtils1.passTestCase("User is able to Repost Poll");
+				testUtils1.passTestCase("User is able to Repost Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Repost Poll");
-				}
-				////////// Post Share on Feed//////////
-				testUtils1.testCaseCreate("TC 4 K:Article Delete");
-				Thread.sleep(2000);
-				createpostMethod.ClickonThreeDotRepost();
-				testUtils1.test.log(Status.INFO, "Click on Three dot button");
-				createpostMethod.ClickonDeleteButtonRepost();
-				testUtils1.test.log(Status.INFO, "Click on Delete button");
-				Thread.sleep(2000);
-				try {
-					if (createpostMethod.verifyPostisDeleted()) {
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Repost Poll");
+		}
+		////////// Post Share on Feed//////////
+		testUtils1.testCaseCreate("TC 4 K:Article Delete");
+		Thread.sleep(2000);
+		createpostMethod.ClickonThreeDotRepost();
+		testUtils1.test.log(Status.INFO, "Click on Three dot button");
+		createpostMethod.ClickonDeleteButtonRepost();
+		testUtils1.test.log(Status.INFO, "Click on Delete button");
+		Thread.sleep(2000);
+		try {
+			if (createpostMethod.verifyPostisDeleted()) {
 
-						testUtils1.passTestCase("User is able to Delete Poll");
+				testUtils1.passTestCase("User is able to Delete Poll");
 
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
-					testUtils1.failTestCase("User is not able to Delete Poll");
-				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Delete Poll");
+		}
 
-		
-		
 	}
 
 	@Test(priority = 5, enabled = false)
@@ -999,9 +1005,209 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				testUtils1.failTestCase("User is not able to Post as Query");
 			}
 
+////////////Post like//////////
+			testUtils1.testCaseCreate("TC 5 B : Query Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Query");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 5 C : Query DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Query");
+			}
+			/////////////// Poll Vote /////
+			testUtils1.testCaseCreate("TC 5 D: Answer Query ");
+			Thread.sleep(1000);
+			postasQueryMethod.AddyourAnsClk();
+			testUtils1.test.log(Status.INFO, "Click on Add your Answer");
+			postasQueryMethod.EnterAnswer();
+			testUtils1.test.log(Status.INFO, "Enter Answer");
+			Thread.sleep(2000);
+			try {
+				if (postasQueryMethod.VerifyAnswerAdded()) {
+					testUtils1.passTestCase("User is  able to Answer for  Query");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Answer for Query");
+			}
+////////Post Comment///////////////
+			testUtils1.testCaseCreate("TC 5 E : Query Comment ");
+			Thread.sleep(3000);
+			postasQueryMethod.ClickonComment();
+			testUtils1.test.log(Status.INFO, "Click on Comment button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (postasQueryMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Comment on Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Comment on Query");
+			}
+
+			/////////// Comment Like Dislike///////
+			testUtils1.testCaseCreate("TC 5 F :Comment Like and Dislike ");
+			Thread.sleep(2000);
+			postasQueryMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (postasQueryMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Query");
+			}
+			postasQueryMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (postasQueryMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Query");
+			}
+
+			//////////// comment Reply////////
+			testUtils1.testCaseCreate("TC 5 G :Comment Reply ");
+			Thread.sleep(2000);
+			postasQueryMethod.ClickonReplyButton();
+			testUtils1.test.log(Status.INFO, "Click on Reply button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			Thread.sleep(3000);
+			try {
+				if (postasQueryMethod.VerifyComment1()) {
+
+					testUtils1.passTestCase("User is able to Reply Comment on Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Reply Comment on Query");
+			}
+			///////// Comment Edit///
+			testUtils1.testCaseCreate("TC 5 H :Comment Edit ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			Thread.sleep(2000);
+			postasQueryMethod.ClickonThreeDot1();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.CliconEdit();
+			testUtils1.test.log(Status.INFO, "Click on Edit button");
+			createpostMethod.EnterEditedComment();
+			testUtils1.test.log(Status.INFO, "Enter Edited Comment");
+			createpostMethod.ClickonSendCommentBtnEdited();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+
+			try {
+				if (postasQueryMethod.VerifyEditedComment()) {
+
+					testUtils1.passTestCase("User is able to Edit Comment on Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit Comment on Query");
+			}
+			////// Delete Comment////
+			testUtils1.testCaseCreate("TC 5 I:Comment Delete ");
+			Thread.sleep(2000);
+			postasQueryMethod.ClickonThreeDot1();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.ClickonDeleteButton();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+
+			try {
+				if (postasQueryMethod.VeiryCommentisDeleted()) {
+
+					testUtils1.passTestCase("User is able to Delete Comment on Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Comment on Query");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 5 J:Poll Share on Feed");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			createpostMethod.ClickonShareButton();
+			testUtils1.test.log(Status.INFO, "Click on Share button");
+			createpostMethod.ClickononFeed();
+			testUtils1.test.log(Status.INFO, "Click on On Feed button");
+			createpostMethod.EnterRepostDescription();
+			testUtils1.test.log(Status.INFO, "Enter Repost Description");
+			createpostMethod.ClickonPostButton();
+			testUtils1.test.log(Status.INFO, "Click on Post button");
+			Thread.sleep(3000);
+			try {
+				if (createpostMethod.VerifyPostRepost()) {
+
+					testUtils1.passTestCase("User is able to Repost Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Repost Query");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 5 K:Query Delete");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDotRepost();
+			testUtils1.test.log(Status.INFO, "Click on Three dot button");
+			createpostMethod.ClickonDeleteButtonRepost();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+			Thread.sleep(2000);
+			try {
+				if (createpostMethod.verifyPostisDeleted()) {
+
+					testUtils1.passTestCase("User is able to Delete Query");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Query");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			testUtils1.failTestCase("User is not able to Post as Query");
+			testUtils1.failTestCase("User is not able to Post as Query, testcase failed");
 		}
 	}
 
@@ -1100,9 +1306,234 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				testUtils1.failTestCase("User is not able to Create Survey");
 			}
 
+////////////Post like//////////
+			testUtils1.testCaseCreate("TC 6 B : Survey Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Survey");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 6 C : Survey DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Survey");
+			}
+			/////////////// Poll Vote /////
+			testUtils1.testCaseCreate("TC 6 D: Survey Answer ");
+			Thread.sleep(1000);
+			surveyCreateMethod.ClickonAddyourAnswerSurvey();
+			testUtils1.test.log(Status.INFO, "Click on Add your Answer");
+			surveyCreateMethod.SelectOptionMCQSurvey();
+			testUtils1.test.log(Status.INFO, "select mcq options");
+			surveyCreateMethod.selectsecondanswer();
+			testUtils1.test.log(Status.INFO, "select 2nd question answer");
+			surveyCreateMethod.EnterAnswerthirdQues();
+			testUtils1.test.log(Status.INFO, "answer question 3 text");
+			Thread.sleep(2000);
+			absCom.swipDownByCoordinates(521, 2122, 664);
+			surveyCreateMethod.ClickonFinaladdyourAns();
+			testUtils1.test.log(Status.INFO, "Click on Add your Answer");
+			try {
+				if (surveyCreateMethod.VerifyAnswerorNot()) {
+					testUtils1.passTestCase("User is  able to Answer for  Survey");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Answer for Survey");
+			}
+			Thread.sleep(2000);
+
+			surveyCreateMethod.ClickonSurveyReport();
+
+			Thread.sleep(2000);
+			try {
+				if (surveyCreateMethod.VerifySurveyReport()) {
+					testUtils1.passTestCase("User is  able to See Report of  Survey");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to See Report of  Survey");
+			}
+
+			//////// Post Comment///////////////
+			testUtils1.testCaseCreate("TC 6 E : Survey Comment ");
+			Thread.sleep(3000);
+			System.out.println("------------survey comment testcase------------");
+			surveyCreateMethod.ClickonBackButtn();
+			testUtils1.test.log(Status.INFO, "Click on Back button");
+			createpostMethod.ClickonComment();
+			testUtils1.test.log(Status.INFO, "Click on Comment button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Comment on Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Comment on Survey");
+			}
+
+			/////////// Comment Like Dislike///////
+			testUtils1.testCaseCreate("TC 6 F :Comment Like and Dislike ");
+			Thread.sleep(2000);
+
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Survey");
+			}
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Poll");
+			}
+
+			//////////// comment Reply////////
+			testUtils1.testCaseCreate("TC 6 G :Comment Reply ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonReplyButton();
+			testUtils1.test.log(Status.INFO, "Click on Reply button");
+			createpostMethod.EnterComment();
+			testUtils1.test.log(Status.INFO, "Enter Comment");
+			createpostMethod.ClickonSendButton();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+			try {
+				if (createpostMethod.VerifyComment()) {
+
+					testUtils1.passTestCase("User is able to Reply Comment on Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Reply Comment on Survey");
+			}
+			///////// Comment Edit///
+			testUtils1.testCaseCreate("TC 6 H :Comment Edit ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.CliconEdit();
+			testUtils1.test.log(Status.INFO, "Click on Edit button");
+			createpostMethod.EnterEditedComment();
+			testUtils1.test.log(Status.INFO, "Enter Edited Comment");
+			createpostMethod.ClickonSendCommentBtnEdited();
+			testUtils1.test.log(Status.INFO, "Click on Send button");
+
+			try {
+				if (createpostMethod.VerifyEditedComment()) {
+
+					testUtils1.passTestCase("User is able to Edit Comment on Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit Comment on Survey");
+			}
+			////// Delete Comment////
+			testUtils1.testCaseCreate("TC 6 I:Comment Delete ");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot button");
+			createpostMethod.ClickonDeleteButton();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+
+			try {
+				if (createpostMethod.VeiryCommentisDeleted()) {
+
+					testUtils1.passTestCase("User is able to Delete Comment on Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Comment on Survey");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 6 J:Survey Share on Feed");
+			Thread.sleep(2000);
+			createpostMethod.ClickonXButton();
+			testUtils1.test.log(Status.INFO, "Click on X button");
+			createpostMethod.ClickonShareButton();
+			testUtils1.test.log(Status.INFO, "Click on Share button");
+			createpostMethod.ClickononFeed();
+			testUtils1.test.log(Status.INFO, "Click on On Feed button");
+			createpostMethod.EnterRepostDescription();
+			testUtils1.test.log(Status.INFO, "Enter Repost Description");
+			createpostMethod.ClickonPostButton();
+			testUtils1.test.log(Status.INFO, "Click on Post button");
+			Thread.sleep(3000);
+			try {
+				if (createpostMethod.VerifyPostRepost()) {
+
+					testUtils1.passTestCase("User is able to Repost Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Repost Survey");
+			}
+			////////// Post Share on Feed//////////
+			testUtils1.testCaseCreate("TC 6 K:Survey Delete");
+			Thread.sleep(2000);
+			createpostMethod.ClickonThreeDotRepost();
+			testUtils1.test.log(Status.INFO, "Click on Three dot button");
+			createpostMethod.ClickonDeleteButtonRepost();
+			testUtils1.test.log(Status.INFO, "Click on Delete button");
+			Thread.sleep(2000);
+			try {
+				if (createpostMethod.verifyPostisDeleted()) {
+
+					testUtils1.passTestCase("User is able to Delete Survey");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Delete Survey");
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			testUtils1.failTestCase("User is not able to Create Survey");
+			testUtils1.failTestCase("User is not able to Create Survey, testcase failed");
 		}
 	}
 

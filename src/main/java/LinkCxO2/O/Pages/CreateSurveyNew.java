@@ -223,5 +223,64 @@ public class CreateSurveyNew extends AbstractComponent {
 	public boolean VerifySuveyCreatedorNOT() {
 		return action.isDisplay(verifySurvey);
 	}
-
+	
+	
+	/////////answer survey///////
+	
+	@FindBy(xpath = "(//android.widget.Button[@content-desc=\"Add Your Answers\"])[1]/android.widget.TextView")
+	private WebElement Addyouranswersurv;
+	public void ClickonAddyourAnswerSurvey()
+	{
+		action.clickElement(Addyouranswersurv);
+	}
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Satisfied\"]/android.widget.TextView")
+	private WebElement selectOptionMCQ;
+	public void SelectOptionMCQSurvey()
+	{
+		action.clickElement(selectOptionMCQ);
+	}
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Yes\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	private WebElement ans2ndquestion;
+	public void selectsecondanswer()
+	{
+		action.clickElement(ans2ndquestion);
+	}
+	@FindBy(xpath = "//android.widget.EditText[@text=\"Type Here\"]")
+	private WebElement Enter3rdQuesAns;
+	public void EnterAnswerthirdQues()
+	{
+		action.sendKeysElement(Enter3rdQuesAns, "Nothing");
+	}
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Add Your Answers\"]")
+	private WebElement addfinalAns;
+	public void ClickonFinaladdyourAns()
+	{
+		action.clickElement(addfinalAns);
+	}
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"See Survey Report\"]/android.widget.TextView")
+	private WebElement verifyAns;
+	public boolean VerifyAnswerorNot()
+	{
+	 return action.isDisplay(verifyAns);
+	}
+	public void ClickonSurveyReport()
+	{
+		action.clickElement(verifyAns);
+	}
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Survey Report\"]")
+	private WebElement verifyReport;
+	public boolean VerifySurveyReport()
+	{
+		return action.isDisplay(verifyReport);
+	}
+	
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[2]")
+	private WebElement backBtn;
+	public void ClickonBackButtn()
+	{
+		action.clickElement(backBtn);
+	}
+	
 }

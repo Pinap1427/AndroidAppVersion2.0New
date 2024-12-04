@@ -1,41 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="22" total="24" passed="2" failed="0" skipped="0">
+<testng-results ignored="18" total="24" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-28T18:36:28 IST" name="Suite" finished-at="2024-11-28T18:38:23 IST" duration-ms="115150">
+  <suite started-at="2024-12-04T18:38:57 IST" name="Suite" finished-at="2024-12-04T18:47:13 IST" duration-ms="495912">
     <groups>
     </groups>
-    <test started-at="2024-11-28T18:36:28 IST" name="Test" finished-at="2024-11-28T18:38:23 IST" duration-ms="115150">
+    <test started-at="2024-12-04T18:38:57 IST" name="Test" finished-at="2024-12-04T18:47:13 IST" duration-ms="495912">
       <class name="MayurTest.AllTestCasesLinkCxoApp">
-        <test-method is-config="true" signature="SetUp()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:36:28 IST" name="SetUp" finished-at="2024-11-28T18:36:41 IST" duration-ms="13404" status="PASS">
+        <test-method is-config="true" signature="SetUp()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:38:57 IST" name="SetUp" finished-at="2024-12-04T18:39:09 IST" duration-ms="11759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:36:41 IST" name="beforeMethod" finished-at="2024-11-28T18:36:41 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:39:09 IST" name="beforeMethod" finished-at="2024-12-04T18:39:09 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="LoginInWithEmailid()[pri:1, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:36:41 IST" name="LoginInWithEmailid" finished-at="2024-11-28T18:37:08 IST" duration-ms="26550" status="PASS">
+        <test-method signature="LoginInWithEmailid()[pri:1, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:39:09 IST" name="LoginInWithEmailid" finished-at="2024-12-04T18:39:33 IST" duration-ms="23701" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginInWithEmailid -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:37:08 IST" name="afterMethod" finished-at="2024-11-28T18:37:08 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:39:33 IST" name="afterMethod" finished-at="2024-12-04T18:39:33 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:37:08 IST" name="beforeMethod" finished-at="2024-11-28T18:37:08 IST" duration-ms="1" status="PASS">
+        <test-method signature="CreatePost()[pri:2, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:39:33 IST" name="CreatePost" finished-at="2024-12-04T18:40:59 IST" duration-ms="86549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatePost -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:39:33 IST" name="beforeMethod" finished-at="2024-12-04T18:39:33 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="CreatePoll()[pri:4, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:37:08 IST" name="CreatePoll" finished-at="2024-11-28T18:38:22 IST" duration-ms="74176" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreatePoll -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:38:22 IST" name="afterMethod" finished-at="2024-11-28T18:38:22 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:40:59 IST" name="afterMethod" finished-at="2024-12-04T18:40:59 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-11-28T18:38:22 IST" name="tearDown" finished-at="2024-11-28T18:38:23 IST" duration-ms="967" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:40:59 IST" name="beforeMethod" finished-at="2024-12-04T18:40:59 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="ComposeArticle()[pri:3, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:40:59 IST" name="ComposeArticle" finished-at="2024-12-04T18:42:28 IST" duration-ms="88873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ComposeArticle -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:42:28 IST" name="afterMethod" finished-at="2024-12-04T18:42:28 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:42:28 IST" name="beforeMethod" finished-at="2024-12-04T18:42:28 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="CreatePoll()[pri:4, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:42:28 IST" name="CreatePoll" finished-at="2024-12-04T18:43:47 IST" duration-ms="79182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreatePoll -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:43:47 IST" name="afterMethod" finished-at="2024-12-04T18:43:47 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:43:47 IST" name="beforeMethod" finished-at="2024-12-04T18:43:47 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="PostAsQuery()[pri:5, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:43:47 IST" name="PostAsQuery" finished-at="2024-12-04T18:45:07 IST" duration-ms="79659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PostAsQuery -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:45:07 IST" name="beforeMethod" finished-at="2024-12-04T18:45:07 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:45:07 IST" name="afterMethod" finished-at="2024-12-04T18:45:07 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="CreateSurvey()[pri:6, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:45:07 IST" name="CreateSurvey" finished-at="2024-12-04T18:47:11 IST" duration-ms="124260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateSurvey -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:47:11 IST" name="afterMethod" finished-at="2024-12-04T18:47:11 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:MayurTest.AllTestCasesLinkCxoApp@49139829]" started-at="2024-12-04T18:47:11 IST" name="tearDown" finished-at="2024-12-04T18:47:13 IST" duration-ms="1861" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
