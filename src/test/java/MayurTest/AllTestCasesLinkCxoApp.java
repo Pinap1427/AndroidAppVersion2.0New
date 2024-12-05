@@ -909,7 +909,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			testUtils1.failTestCase("User is not able to Edit Comment on Poll");
 		}
 		////// Delete Comment////
-		testUtils1.testCaseCreate("TC 3 I:Comment Delete ");
+		testUtils1.testCaseCreate("TC 4 I:Comment Delete ");
 		Thread.sleep(2000);
 		createpostMethod.ClickonThreeDot();
 		testUtils1.test.log(Status.INFO, "Click on Three Dot button");
@@ -2014,9 +2014,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void CreateNewEvent() throws InterruptedException, IOException {
-		testUtils1.testCaseCreate("TC 8 : Create New Event ");
+		testUtils1.testCaseCreate("TC 8 A : Create New Event ");
 		Thread.sleep(3000);
 		try {
 			newEventCreateMethod.ClickonMoreButton();

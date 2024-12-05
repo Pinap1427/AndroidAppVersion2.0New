@@ -30,8 +30,14 @@ public class LoginWithEmailIDNew extends AbstractComponent {
 	
 	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[6]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[2]")
 	private WebElement EmailSwitch;
+	
+	@FindBy(xpath = "//android.widget.Button[@text='While using the app']")
+	private WebElement whileusingapp;
+
 
 	public void ClickonContinueWithEmailorMobile() throws InterruptedException {
+		action.clickElement(whileusingapp);
+		Thread.sleep(1000);
 		action.clickElement(continuewithemail);
 		Thread.sleep(2000);
 		action.clickElement(EmailSwitch);
