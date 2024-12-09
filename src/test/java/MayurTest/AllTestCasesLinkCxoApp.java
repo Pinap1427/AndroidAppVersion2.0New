@@ -2109,8 +2109,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 			} catch (Exception e) {
 				e.printStackTrace();
-				testUtils1.failTestCase("User is not able to Create Event , TestCase Failed");
+				testUtils1.failTestCase("User is not able to Create Event");
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			testUtils1.failTestCase("User is not able to Create Event , TestCase Failed");

@@ -114,13 +114,14 @@ public class CreateEventNew extends AbstractComponent {
 //		action.clickElement(confBtn);
 //		action.clickElement(selectCategory);
 	}
+
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Business Growth\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromdd;
-	
+
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
 	private WebElement confBtn;
-	public void SelectCategoryfromDropdown() throws InterruptedException
-	{
+
+	public void SelectCategoryfromDropdown() throws InterruptedException {
 		action.clickElement(SelectCategoryfromdd);
 		Thread.sleep(1000);
 		action.clickElement(confBtn);
@@ -132,14 +133,10 @@ public class CreateEventNew extends AbstractComponent {
 			+ "\r\n" + "Don't miss out on the electrifying atmosphere, the camaraderie, and the unforgettable.\r\n"
 			+ "\r\n" + "Be there to witness history in the making.";
 
-	String LinkedInEventDetails="Are you ready to crack the code and unlock the secrets of AI technology to create more freedom, time, and income to make a difference and travel the world?\r\n"
-			+ "\r\n"
-			+ "Do you realize that ChatGPT is the future, yet you don’t know where to start?\r\n"
-			+ "\r\n"
+	String LinkedInEventDetails = "Are you ready to crack the code and unlock the secrets of AI technology to create more freedom, time, and income to make a difference and travel the world?\r\n"
+			+ "\r\n" + "Do you realize that ChatGPT is the future, yet you don’t know where to start?\r\n" + "\r\n"
 			+ "Join me for this transformative event designed for coaches, consultants, and entrepreneurs who want to take advantage of cutting-edge AI technology to improve life - without stress and overwhelm.\r\n"
-			+ "\r\n"
-			+ "Here's what you can expect:\r\n"
-			+ "\r\n"
+			+ "\r\n" + "Here's what you can expect:\r\n" + "\r\n"
 			+ "🔐 Master ChatGPT: Discover how ChatGPT can revolutionize your LinkedIn strategy. Learn how to write effective message sequences, LinkedIn event invitations and streamline your content creation in a fraction of the time.\r\n"
 			+ "\r\n"
 			+ "💡 LinkedIn Events Mastery: Unleash the power of LinkedIn Events to expand your network exponentially, make meaningful connections, build credibility, and attract your ideal clients.\r\n"
@@ -147,12 +144,11 @@ public class CreateEventNew extends AbstractComponent {
 			+ "⚙️ Effective Systems: Gain valuable insights into creating systems that leverage results, reduce overwhelm, free up your time, and allow you to scale.\r\n"
 			+ "\r\n"
 			+ "🚀 Supercharge Productivity & Well-being: Learn practical strategies to eliminate stress, supercharge productivity, and create an awesome work-life balance as you navigate the demands of a thriving business.\r\n"
-			+ "\r\n"
-			+ "📅 Save the Date: Tuesday, July 16 at 11.30 am EST\r\n"
+			+ "\r\n" + "📅 Save the Date: Tuesday, July 16 at 11.30 am EST\r\n"
 			+ "🌍 Location: The comfort of your own office or home\r\n"
 			+ "💼 Hosted by: Shamayah Sarrucco, LinkedIn Strategist\r\n"
 			+ "💻 Event Format: Offline - Raghuleela Mall Vashi";
-	
+
 	@FindBy(xpath = "//android.widget.EditText[@text=\"Enter Event Details\"]")
 	private WebElement enterEventDet;
 
@@ -318,6 +314,7 @@ public class CreateEventNew extends AbstractComponent {
 	public void SelectCheckBoxOfConnection() {
 		action.clickElement(SelectcheckboxCon);
 	}
+
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Select All\"]/android.widget.TextView")
 	private WebElement selectAll;
 
@@ -329,46 +326,49 @@ public class CreateEventNew extends AbstractComponent {
 		Thread.sleep(1000);
 		action.clickElement(publishEvent);
 	}
+
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[1]")
 	private WebElement MyEvent;
-	//touch click
+
+	// touch click
 //	895,134
-	public void ClickonMyEvent() throws InterruptedException
-	{
-		TouchAction action=new TouchAction(driver);
+	public void ClickonMyEvent() throws InterruptedException {
+		TouchAction action = new TouchAction(driver);
 		action.tap(PointOption.point(895, 134)).perform();
 		Thread.sleep(2000);
 	}
+
 //	542,2135,1114
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.View/android.view.ViewGroup")
 	private WebElement VerifyEvent;
-	
-	public boolean VerifyEventCreatedorNOT()
-	{
+
+	public boolean VerifyEventCreatedorNOT() {
 		return action.isDisplay(VerifyEvent);
 	}
-	
-	/////////////View Event Details////////////
+
+	///////////// View Event Details////////////
 	@FindBy(xpath = "(//android.widget.TextView)[3]")
 	private WebElement ClkOnEvent;
-	public void ClickonEvent()
-	{
+
+	public void ClickonEvent() {
 		action.clickElement(ClkOnEvent);
 	}
+
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Edit\"]")
 	private WebElement VerifyViewDet;
-	public boolean VerifyViewDetails()
-	{
+
+	public boolean VerifyViewDetails() {
 		return action.isDisplay(VerifyViewDet);
 	}
-	////////edit Event////////
+
+	//////// edit Event////////
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Edit\"]")
 	private WebElement EditBtn;
-	public void ClickonEditButton()
-	{
+
+	public void ClickonEditButton() {
 		action.clickElement(EditBtn);
 	}
-	
+
 	@FindBy(xpath = "//android.view.ViewGroup[@resource-id=\"RNE__Image__children__container\"]")
 	private WebElement addimgclkEdit;
 
@@ -438,35 +438,30 @@ public class CreateEventNew extends AbstractComponent {
 //		action.clickElement(confBtn);
 //		action.clickElement(selectCategory);
 	}
+
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" Operations\"]/android.widget.TextView")
 	private WebElement SelectCategoryfromddEdit;
-	
+
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Confirm\"]/android.widget.TextView")
 	private WebElement confBtnEdit;
-	public void SelectCategoryfromDropdownEdit() throws InterruptedException
-	{
+
+	public void SelectCategoryfromDropdownEdit() throws InterruptedException {
 		action.clickElement(SelectCategoryfromddEdit);
 		Thread.sleep(1000);
 		action.clickElement(confBtnEdit);
 	}
-	
-	String EditEventDetails="Top 5 Most Promising AI Stocks for 2024\r\n"
-			+ "\r\n"
+
+	String EditEventDetails = "Top 5 Most Promising AI Stocks for 2024\r\n" + "\r\n"
 			+ "💥Are you ready to navigate the dynamic world of Artificial Intelligence stocks? Join us for an insightful audio event where we delve into the future of AI investments.\r\n"
-			+ "\r\n"
-			+ "Who should tune in:\r\n"
-			+ "\r\n"
-			+ "💠(1) Investors and Traders\r\n"
+			+ "\r\n" + "Who should tune in:\r\n" + "\r\n" + "💠(1) Investors and Traders\r\n"
 			+ "If you're keen on maximizing your portfolio's potential by investing in the AI sector, this event is tailored to you. Gain exclusive insights into the stocks that could shape the AI investment landscape for years to come.\r\n"
-			+ "\r\n"
-			+ "💠(2) Tech Enthusiasts and Innovators\r\n"
+			+ "\r\n" + "💠(2) Tech Enthusiasts and Innovators\r\n"
 			+ "Curious about the intersection of technology and finance? Join us to explore the companies at the forefront of AI innovation and discover how their success impacts the industry as a whole.\r\n"
-			+ "\r\n"
-			+ "💠(3) Business Leaders and Decision Makers\r\n"
+			+ "\r\n" + "💠(3) Business Leaders and Decision Makers\r\n"
 			+ "If you're steering your company toward AI integration, understanding the key players in the stock market is essential. This event equips you with knowledge to inform your strategic decisions in the AI space.\r\n"
 			+ "\r\n"
 			+ "🔥Don't miss out on this opportunity to grasp the potential of Top 5 Most Promising AI Stocks for 2024 and make informed investment choices.";
-	
+
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[2]")
 	private WebElement enterEventDetEdit;
 
@@ -628,58 +623,331 @@ public class CreateEventNew extends AbstractComponent {
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Edit\"]")
 	private WebElement VerifyEditedEvent;
-	public boolean VerifyEditDetails()
-	{
+
+	public boolean VerifyEditDetails() {
 		return action.isDisplay(VerifyEditedEvent);
 	}
 
-	///Invite Members///////
+	/// Invite Members///////
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Participants\"]/android.widget.TextView")
 	private WebElement participClk;
-	public void ClickonParticipantClick()
-	{
+
+	public void ClickonParticipantClick() {
 		action.clickElement(participClk);
 	}
+
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]")
 	private WebElement PlusIcon;
-	public void ClickonPlusIconPart()
-	{
+
+	public void ClickonPlusIconPart() {
 		action.clickElement(PlusIcon);
 	}
+
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Select All\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement SelectAllCheck;
-	public void ClickonSelectAll()
-	{
+
+	public void ClickonSelectAll() {
 		action.clickElement(SelectAllCheck);
 	}
+
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Share\"]/android.widget.TextView")
 	private WebElement ShareBtn;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]")
 	private WebElement backBtn;
-	public void ClickonShareButton() throws InterruptedException
-	{
+
+	public void ClickonShareButton() throws InterruptedException {
 		action.clickElement(ShareBtn);
 		Thread.sleep(1000);
 		action.clickElement(backBtn);
 	}
-	
+
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup")
 	private WebElement InvitedClk;
-	public void ClickonInvited()
-	{
+
+	public void ClickonInvited() {
 		action.clickElement(InvitedClk);
 	}
+
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement VerifyInvtedUser;
-	public boolean VerifyInvitedUserinTab()
-	{
+
+	public boolean VerifyInvitedUserinTab() {
 		return action.isDisplay(VerifyInvtedUser);
 	}
-	////add Media///////s
-	
-	
-	
-	
+	//// add Media///////
 
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[4]/android.view.View/android.view.ViewGroup/android.view.ViewGroup")
+	private WebElement MediaTabclk;
+
+	public void ClickonMediaTab() {
+		action.clickElement(MediaTabclk);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Add your event images / videos etc\"]/android.widget.TextView")
+	private WebElement AddMediaClk;
+
+	public void ClickonAddMedia() {
+		action.clickElement(AddMediaClk);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[1]/androidx.cardview.widget.CardView/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[1]")
+	private WebElement image1;
+
+	public void SelectImage1() throws InterruptedException {
+		Thread.sleep(2000);
+		action.clickElement(image1);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.drawerlayout.widget.DrawerLayout/android.widget.ScrollView/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/androidx.cardview.widget.CardView[2]/androidx.cardview.widget.CardView/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[1]")
+	private WebElement image2;
+
+	public void SelectImage2() throws InterruptedException {
+		Thread.sleep(2000);
+		action.clickElement(image2);
+	}
+
+	@FindBy(xpath = "(//android.widget.ImageView[@content-desc=\"Alternate LxText\"])[1]")
+	private WebElement VerifyMedia;
+
+	public boolean VerifyMediaUploaded() {
+		return action.isDisplay(VerifyMedia);
+	}
+
+	////// Share Event////
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")
+	private WebElement threedotClk;
+
+	public void ClickonThreeDot() {
+		action.clickElement(threedotClk);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Share\"]/android.widget.TextView")
+	private WebElement ShareClk;
+
+	public void ClickonShare() {
+		action.clickElement(ShareClk);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"On Feed\"]")
+	private WebElement OnFeedClk;
+
+	public void ClickonOnFeed() {
+		action.clickElement(OnFeedClk);
+	}
+
+	@FindBy(xpath = "//android.widget.EditText[@text=\"Unlock Your Professional Voice and Begin Networking with Top Executives Today!\"]")
+	private WebElement EnterComment;
+
+	public void EnterRepostComment() {
+		action.sendKeysElement(EnterComment, "Join My Event");
+	}
+
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Share\"]/android.widget.TextView")
+	private WebElement Sharetn;
+
+	public void ClickonShareButtonRepost() {
+		action.clickElement(Sharetn);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"With Connection\"]")
+	private WebElement WithConnectionClk;
+
+	public void ClickonWithConnection() throws InterruptedException {
+		action.clickElement(threedotClk);
+		Thread.sleep(1000);
+		action.clickElement(ShareClk);
+		Thread.sleep(1000);
+		action.clickElement(WithConnectionClk);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Prabhat Kumar Raj Testing, Business Head, LinkCXO Global\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement SelectConnection;
+
+	public void ClickonConnection() {
+		action.clickElement(SelectConnection);
+	}
+
+	public void ClickonShareButtonConnection() {
+		action.clickElement(Sharetn);
+	}
+	// add verify button after toast message/////////
+
+///////////Attend Event/////////////
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement firstbackBtn;
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement secondbackBtn;
+
+	public void ClickonBackButton() throws InterruptedException {
+		action.clickElement(firstbackBtn);
+		Thread.sleep(1000);
+		action.clickElement(secondbackBtn);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView")
+	private WebElement firstEventBtn;
+
+	public void ClickonFirstEvent() {
+		action.clickElement(firstEventBtn);
+	}
+
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Attend\"]/android.widget.TextView")
+	private WebElement AttendBtn;
+
+	public void ClickonAttendButton() {
+		action.clickElement(AttendBtn);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]")
+	private WebElement backBtnAttend;
+
+	public void ClickonAttendBackButton() {
+		action.clickElement(backBtnAttend);
+	}
+	//////// Cancel Event///////
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView[1]")
+	private WebElement MyEvents;
+
+	public void ClickonMyEventTab() {
+		action.clickElement(MyEvents);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup")
+	private WebElement PendingBtn;
+
+	public void ClickonPending() {
+		action.clickElement(PendingBtn);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView[2]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView")
+	private WebElement ClickonEventinRequested;
+
+	public void ClickonRequestedEvent() {
+		action.clickElement(ClickonEventinRequested);
+	}
+
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Cancel Request\"]/android.widget.TextView")
+	private WebElement CancelBtn;
+
+	public void ClickonCancelbutton() {
+		action.clickElement(CancelBtn);
+	}
+
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Requested\"]")
+	private WebElement VerifyCancelEvent1;
+
+	public boolean VerifyCancelEvent() {
+		return action.isDisplay(VerifyCancelEvent1);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement CancelBackBtn;
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[5]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView")
+	private WebElement FirstEventTrending;
+
+	///////// BookMark//////////////
+	public void ClickonFirstEventOnTrending() throws InterruptedException {
+		action.clickElement(CancelBackBtn);
+		Thread.sleep(1000);
+		action.clickElement(FirstEventTrending);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement EventThreeDot;
+
+	public void ClickonThreeDotEvent() {
+		action.clickElement(EventThreeDot);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Bookmark\"]/android.widget.TextView")
+	private WebElement BookmarkEvent;
+
+	public void ClickonBookMark() {
+		action.clickElement(BookmarkEvent);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Content Bookmarked successfully\"]/android.widget.TextView")
+	private WebElement VerifyBookMarkSucces;
+
+	public boolean VerifyBookmark() {
+		return action.isDisplay(VerifyBookMarkSucces);
+	}
+
+/////////Report//////////////
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Report\"]/android.widget.TextView")
+	private WebElement ReportBtn;
+
+	public void ClickonReportButton() throws InterruptedException {
+		action.clickElement(EventThreeDot);
+		Thread.sleep(1000);
+		action.clickElement(ReportBtn);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Privacy concerns\"]/android.widget.TextView")
+	private WebElement Privacyreport;
+
+	public void ClickonPrivacyReport() {
+		action.clickElement(Privacyreport);
+	}
+
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]/android.widget.TextView")
+	private WebElement SubmitBtn;
+
+	public void ClickonSubmitButton() {
+		action.clickElement(SubmitBtn);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Report send successfully\"]/android.widget.TextView")
+	private WebElement ReportSuccess;
+
+	public boolean VerifyReportSucc() {
+		return action.isDisplay(ReportSuccess);
+	}
+	
+	//////////Deactivate Event/////////
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]")
+	private WebElement backclkReport;
+
+	public void BackButtonReport() {
+		action.clickElement(backclkReport);
+	}
+
+	public void ClickonMyEventTab1() {
+		action.clickElement(MyEvents);
+	}
+
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView")
+	private WebElement firstEventinHosting;
+
+	public void ClickonfirstHostingEvent() {
+		action.clickElement(firstEventinHosting);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Manage Participant\"]/android.widget.TextView")
+	private WebElement DeactivateEvent;
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	private WebElement DeactivateEventBAck;
+
+	public void ClickonDeactivateEvent() throws InterruptedException {
+		action.clickElement(EventThreeDot);
+		Thread.sleep(1000);
+		action.clickElement(DeactivateEvent);
+		Thread.sleep(1000);
+		action.clickElement(DeactivateEventBAck);
+		action.clickElement(MyEvents);
+
+	}
+
+	@FindBy(xpath = "//android.widget.TextView[@text=\"My Events\"]")
+	private WebElement verifyDeactivate;
+
+	public boolean VerifyEventDeactivate() {
+		return action.isDisplay(verifyDeactivate);
+	}
+	
 
 }
