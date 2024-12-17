@@ -116,6 +116,8 @@ public class ClubCreatePost extends AbstractComponent {
 		rb.keyPress(KeyEvent.VK_ENTER);
 		Thread.sleep(2000);
 	}
+	
+	
 
 	@FindBy(xpath = "(//android.widget.ImageView[@resource-id=\"com.google.android.documentsui:id/icon_thumb\"])[1]")
 	private WebElement selectImg;
@@ -146,4 +148,5 @@ public class ClubCreatePost extends AbstractComponent {
 		return GettextofPostTitleLast.getText();
 		
 	}
+	
 }

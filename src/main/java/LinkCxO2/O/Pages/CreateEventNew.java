@@ -58,7 +58,7 @@ public class CreateEventNew extends AbstractComponent {
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		action.clickElement(imgSelc);
 	}
 
@@ -170,7 +170,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(hostTypeClk);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" INDIVIDUAL\"]/android.widget.CheckBox/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.RectView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\" LINKCXO\"]/android.widget.TextView")
 	private WebElement hostTypeSel;
 
 	public void SelectHostType() {
@@ -466,7 +466,7 @@ public class CreateEventNew extends AbstractComponent {
 	private WebElement enterEventDetEdit;
 
 	public void EnterEventDetailsEdit() {
-		action.sendKeysElement(enterEventDet, EditEventDetails);
+		action.sendKeysElement(enterEventDetEdit, EditEventDetails);
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Next\"]")
@@ -500,8 +500,8 @@ public class CreateEventNew extends AbstractComponent {
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
 	private WebElement locationEnterEdit;
 
-	public void EnterLocationEdit(String EventVenue) {
-		action.sendKeysElement(locationEnter, "https://www.zoom.us");
+	public void EnterLocationEdit() {
+		action.sendKeysElement(locationEnterEdit, "https://www.zoom.us");
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[4]")
@@ -527,7 +527,7 @@ public class CreateEventNew extends AbstractComponent {
 	private WebElement startDateEdit;
 
 	public void ClickonSelectFirstDateEdit() {
-		action.clickElement(startDate);
+		action.clickElement(startDateEdit);
 	}
 
 	@FindBy(xpath = "//android.view.View[@text=\"29\"]")
@@ -702,6 +702,7 @@ public class CreateEventNew extends AbstractComponent {
 	private WebElement image2;
 
 	public void SelectImage2() throws InterruptedException {
+		action.clickElement(AddMediaClk);
 		Thread.sleep(2000);
 		action.clickElement(image2);
 	}
@@ -714,7 +715,7 @@ public class CreateEventNew extends AbstractComponent {
 	}
 
 	////// Share Event////
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement threedotClk;
 
 	public void ClickonThreeDot() {
@@ -773,7 +774,7 @@ public class CreateEventNew extends AbstractComponent {
 	// add verify button after toast message/////////
 
 ///////////Attend Event/////////////
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")
 	private WebElement firstbackBtn;
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
@@ -798,8 +799,15 @@ public class CreateEventNew extends AbstractComponent {
 	public void ClickonAttendButton() {
 		action.clickElement(AttendBtn);
 	}
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Cancel Request\"]/android.widget.TextView")
+	private WebElement CancelBtnSucc;
+	public boolean VerifyeventAttended()
+	{
+		return action.isDisplay(CancelBtnSucc);
+	}
 
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")
 	private WebElement backBtnAttend;
 
 	public void ClickonAttendBackButton() {
@@ -855,7 +863,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(FirstEventTrending);
 	}
 
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement EventThreeDot;
 
 	public void ClickonThreeDotEvent() {
@@ -909,7 +917,7 @@ public class CreateEventNew extends AbstractComponent {
 	
 	//////////Deactivate Event/////////
 
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]")
 	private WebElement backclkReport;
 
 	public void BackButtonReport() {
@@ -927,7 +935,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(firstEventinHosting);
 	}
 
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Manage Participant\"]/android.widget.TextView")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"De activate Event\"]")
 	private WebElement DeactivateEvent;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement DeactivateEventBAck;
@@ -938,6 +946,7 @@ public class CreateEventNew extends AbstractComponent {
 		action.clickElement(DeactivateEvent);
 		Thread.sleep(1000);
 		action.clickElement(DeactivateEventBAck);
+		Thread.sleep(1000);
 		action.clickElement(MyEvents);
 
 	}

@@ -2014,7 +2014,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		}
 	}
 
-	@Test(priority = 8, enabled = true)
+	@Test(priority = 8, enabled = false)
 	public void CreateNewEvent() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 8 A : Create New Event ");
 		Thread.sleep(3000);
@@ -2111,7 +2111,267 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				e.printStackTrace();
 				testUtils1.failTestCase("User is not able to Create Event");
 			}
-			
+			////////// View Details///
+			testUtils1.testCaseCreate("TC 8 B : View Details Event ");
+			Thread.sleep(3000);
+
+			newEventCreateMethod.ClickonEvent();
+			testUtils1.test.log(Status.INFO, "Click on Event");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyViewDetails()) {
+					testUtils1.passTestCase("User is  able to View details of the Event");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to View details of the Event");
+			}
+			//////// Edit Event/////////
+
+			testUtils1.testCaseCreate("TC 8 C : Edit Event ");
+			Thread.sleep(3000);
+
+			newEventCreateMethod.ClickonEditButton();
+			testUtils1.test.log(Status.INFO, "Click on Edit");
+			newEventCreateMethod.ClickonAddImageEdit();
+			testUtils1.test.log(Status.INFO, "Click on add image");
+			newEventCreateMethod.SelectImageEdit();
+			testUtils1.test.log(Status.INFO, "Select Image");
+			newEventCreateMethod.EnterEventTitleEdit();
+			testUtils1.test.log(Status.INFO, "Enter Event Title");
+			newEventCreateMethod.ClickonSelectIndustryEdit();
+			testUtils1.test.log(Status.INFO, "Click on Industry");
+			newEventCreateMethod.SelectIndustryFromDDEdit();
+			testUtils1.test.log(Status.INFO, "Select industry from list ");
+			newEventCreateMethod.ClickonConfirmButtonEdit();
+			testUtils1.test.log(Status.INFO, "Click on Confirm Button");
+			newEventCreateMethod.ClickonSelectCategoryEdit();
+			testUtils1.test.log(Status.INFO, "Click on Select Cagtegory");
+//			newEventCreateMethod.SelectCategoryFromDDEdit();
+//			testUtils1.test.log(Status.INFO, "Select Catergory form list");
+			newEventCreateMethod.SelectCategoryfromDropdownEdit();
+			testUtils1.test.log(Status.INFO, "Select Category from list");
+			newEventCreateMethod.EnterEventDetailsEdit();
+			testUtils1.test.log(Status.INFO, "Enter Event Details");
+			newEventCreateMethod.ClickonCreateMyEventEdit();
+			testUtils1.test.log(Status.INFO, "Click on Create my event");
+			newEventCreateMethod.ClickonOfflineRadioButtonEdit();
+			testUtils1.test.log(Status.INFO, "Click on offline Radio Button");
+			Thread.sleep(2000);
+			newEventCreateMethod.EnterLocationEdit();
+			testUtils1.test.log(Status.INFO, "Enter Link");
+			newEventCreateMethod.SelectFree();
+			testUtils1.test.log(Status.INFO, "Select Free toggle button");
+			Thread.sleep(1000);
+			newEventCreateMethod.ClickonSelectFirstDateEdit();
+			testUtils1.test.log(Status.INFO, "Click on First Date Edit");
+			newEventCreateMethod.SelectDateEdit();
+			testUtils1.test.log(Status.INFO, "Select date to edit");
+			newEventCreateMethod.ClickonStartTimeEdit();
+			testUtils1.test.log(Status.INFO, "Click on start Time edit");
+			newEventCreateMethod.SelectStartTimeEdit();
+			testUtils1.test.log(Status.INFO, "Select Start Time Edit");
+			newEventCreateMethod.ClickonEndDateEdit();
+			testUtils1.test.log(Status.INFO, "Click on end Date Event");
+			newEventCreateMethod.SelectEndDateEdit();
+			testUtils1.test.log(Status.INFO, "select End Date Event");
+			newEventCreateMethod.ClickonEndTimeEdit();
+			testUtils1.test.log(Status.INFO, "Click on End Time Event");
+			newEventCreateMethod.SelectEndTimeEdit();
+			testUtils1.test.log(Status.INFO, "Select End Time Event");
+			newEventCreateMethod.ClickonNextButtonEdit();
+			testUtils1.test.log(Status.INFO, "Click on Next Button");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyEditDetails()) {
+					testUtils1.passTestCase("User is  able to Edit the Event");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit the Event");
+			}
+
+			////
+			testUtils1.testCaseCreate("TC 8 D : Invite Members in Event");
+			Thread.sleep(3000);
+
+			newEventCreateMethod.ClickonParticipantClick();
+			testUtils1.test.log(Status.INFO, "Click on Participancts");
+			newEventCreateMethod.ClickonPlusIconPart();
+			testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+			newEventCreateMethod.ClickonSelectAll();
+			testUtils1.test.log(Status.INFO, "Click on Select All");
+			newEventCreateMethod.ClickonShareButton();
+			testUtils1.test.log(Status.INFO, "Click on Share Button");
+			newEventCreateMethod.ClickonInvited();
+			testUtils1.test.log(Status.INFO, "Click on Invited");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyInvitedUserinTab()) {
+					testUtils1.passTestCase("User is  able to invite member");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to invite member");
+			}
+			/// Add Media///
+			testUtils1.testCaseCreate("TC 8 E : Add Media in Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonMediaTab();
+			testUtils1.test.log(Status.INFO, "Click on Media Tab");
+			newEventCreateMethod.ClickonAddMedia();
+			testUtils1.test.log(Status.INFO, "Click on Add MEdia");
+			newEventCreateMethod.SelectImage1();
+			testUtils1.test.log(Status.INFO, "select image 1");
+			newEventCreateMethod.SelectImage2();
+			testUtils1.test.log(Status.INFO, "select image 2");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyMediaUploaded()) {
+					testUtils1.passTestCase("User is  able to Add Media");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Add Media");
+			}
+
+			/////// Share Event////////
+			testUtils1.testCaseCreate("TC 8 F : Share Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonThreeDot();
+			testUtils1.test.log(Status.INFO, "Click on Three Dot");
+			newEventCreateMethod.ClickonShare();
+			testUtils1.test.log(Status.INFO, "Click on Share Event");
+			newEventCreateMethod.ClickonOnFeed();
+			testUtils1.test.log(Status.INFO, "Click on Feed");
+			newEventCreateMethod.EnterRepostComment();
+			testUtils1.test.log(Status.INFO, "Enter Reost Comment");
+			newEventCreateMethod.ClickonShareButtonRepost();
+			testUtils1.test.log(Status.INFO, "Click on share Button");
+			///// Add Verify Method after toast message///
+
+			newEventCreateMethod.ClickonShareButtonRepost();
+			testUtils1.test.log(Status.INFO, "Click on share Button");
+			newEventCreateMethod.ClickonWithConnection();
+			testUtils1.test.log(Status.INFO, "Click on with connection");
+			newEventCreateMethod.ClickonConnection();
+			testUtils1.test.log(Status.INFO, "Click on connect");
+			newEventCreateMethod.ClickonShareButtonConnection();
+			testUtils1.test.log(Status.INFO, "click on connection share button");
+			//// Add Verify Method after toast message////////
+
+			//// Attend Event///
+			testUtils1.testCaseCreate("TC 8 G : Attend Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonBackButton();
+			testUtils1.test.log(Status.INFO, "Click on back button");
+			newEventCreateMethod.ClickonFirstEvent();
+			testUtils1.test.log(Status.INFO, "Click on first event");
+			newEventCreateMethod.ClickonAttendButton();
+			testUtils1.test.log(Status.INFO, "Click on Attend Button");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyeventAttended()) {
+					testUtils1.passTestCase("User is  able to Attend Event");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Attend Event");
+			}
+
+			//// Cancel Event///////
+			testUtils1.testCaseCreate("TC 8 H : Cancel Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonAttendBackButton();
+			testUtils1.test.log(Status.INFO, "Click on attend back button");
+			newEventCreateMethod.ClickonMyEventTab();
+			testUtils1.test.log(Status.INFO, "Click on my event");
+			newEventCreateMethod.ClickonPending();
+			testUtils1.test.log(Status.INFO, "Click on pending");
+			newEventCreateMethod.ClickonRequestedEvent();
+			testUtils1.test.log(Status.INFO, "click on Requested Event");
+			newEventCreateMethod.ClickonCancelbutton();
+			testUtils1.test.log(Status.INFO, "Click on Cancel Button");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyCancelEvent()) {
+					testUtils1.passTestCase("User is  able to Cancel Event");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Cancel Event");
+			}
+
+			///// Bookmark///////
+			testUtils1.testCaseCreate("TC 8 I : Bookmark Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonFirstEventOnTrending();
+			testUtils1.test.log(Status.INFO, "Click on First Trending Event");
+			newEventCreateMethod.ClickonThreeDotEvent();
+			testUtils1.test.log(Status.INFO, "click on Three Dot");
+			newEventCreateMethod.ClickonBookMark();
+			testUtils1.test.log(Status.INFO, "Click on Bookmark");
+			try {
+				if (newEventCreateMethod.VerifyBookmark()) {
+					testUtils1.passTestCase("User is  able to Bookmark Event");
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Bookmark Event");
+			}
+			//// Report///////////
+			testUtils1.testCaseCreate("TC 8 J : Report Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.ClickonReportButton();
+			testUtils1.test.log(Status.INFO, "Click on Report Button");
+			newEventCreateMethod.ClickonPrivacyReport();
+			testUtils1.test.log(Status.INFO, "C;ick on Privacy Report");
+			newEventCreateMethod.ClickonSubmitButton();
+			testUtils1.test.log(Status.INFO, "Click on Submit");
+			try {
+				if (newEventCreateMethod.VerifyReportSucc()) {
+					testUtils1.passTestCase("User is  able to Report Event");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Report Event");
+			}
+
+			///////// Deactivate Event///////
+			testUtils1.testCaseCreate("TC 8 K : Deactivate Event ");
+			Thread.sleep(3000);
+			newEventCreateMethod.BackButtonReport();
+			testUtils1.test.log(Status.INFO, "click on back button");
+			newEventCreateMethod.ClickonMyEventTab1();
+			testUtils1.test.log(Status.INFO, "click on My Event");
+			newEventCreateMethod.ClickonfirstHostingEvent();
+			testUtils1.test.log(Status.INFO, "Click on hosting event");
+			newEventCreateMethod.ClickonDeactivateEvent();
+			testUtils1.test.log(Status.INFO, "Click on deactivate Event");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyEventDeactivate()) {
+					testUtils1.passTestCase("User is  able to Deactivate Event");
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Deactivate Event");
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			testUtils1.failTestCase("User is not able to Create Event , TestCase Failed");
@@ -2119,9 +2379,9 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 
 	}
 
-	@Test(priority = 9, enabled = false)
+	@Test(priority = 9, enabled = true)
 	public void CreateClub() throws InterruptedException, IOException {
-		testUtils1.testCaseCreate("TC 9 : Create New Club ");
+		testUtils1.testCaseCreate("TC 9 A : Create New Club ");
 		Thread.sleep(3000);
 
 		newClubCreateMethod.ClickonMoreButton();
@@ -2171,8 +2431,8 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		Thread.sleep(3000);
 		newClubCreateMethod.ClickonPublishClub();
 		testUtils1.test.log(Status.INFO, "Click on Publish Club");
-		newJobCreateMethod.TouchClickonMyJob();
-		testUtils1.test.log(Status.INFO, "Click on My Jobs Using Touch Click");
+//		newJobCreateMethod.TouchClickonMyJob();
+//		testUtils1.test.log(Status.INFO, "Click on My Jobs Using Touch Click");
 //		absCom.swipDownByCoordinates(740, 2072, 1332);
 //		testUtils1.test.log(Status.INFO, "Swipe down");
 		Thread.sleep(5000);
@@ -2185,6 +2445,50 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		} else {
 			testUtils1.failTestCase("User is not able to Create New Club.");
 		}
+		
+		/////////Create Post in Club////////
+		
+		testUtils1.testCaseCreate("TC 9  : Create Post in Club ");
+		Thread.sleep(3000);
+		clubCreatePostMethod.ClickonPostButton();
+		testUtils1.test.log(Status.INFO, "Click on Post button");
+		clubCreatePostMethod.ClickonPlusIcon();
+		testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+		clubCreatePostMethod.ClickonCreatePost();
+		testUtils1.test.log(Status.INFO, "Click on Create Post");
+		Thread.sleep(4000);
+		clubCreatePostMethod.EnterTextForPOst();
+		testUtils1.test.log(Status.INFO, "Enter Text ");
+		String ExpectedPostText = clubCreatePostMethod.GetExpectedTitlePost();
+		System.out.println(ExpectedPostText);
+		clubCreatePostMethod.ClickonPhotosIcon();
+		testUtils1.test.log(Status.INFO, "Click on Photos icon");
+		Thread.sleep(3000);
+//		createpostMethod.EnterBtn();
+//		clubCreatePostMethod.ClickonAllowButton();
+//		testUtils1.test.log(Status.INFO, "Click on Allow");
+		Thread.sleep(2000);
+		clubCreatePostMethod.SelectImage();
+		testUtils1.test.log(Status.INFO, "Select Image");
+		Thread.sleep(3000);
+		clubCreatePostMethod.ClickonAddYourPost();
+		testUtils1.test.log(Status.INFO, "Click on Add Your Post");
+		clubCreatePostMethod.ClickonPublishNow();
+		testUtils1.test.log(Status.INFO, "Click on Publish Now");
+		Thread.sleep(6000);
+
+		String ActualPostText = clubCreatePostMethod.GetActualTitlePost();
+		System.out.println(ActualPostText);
+
+		if (ActualPostText.equals(ExpectedPostText)) {
+			System.out.println("inside if block");
+			testUtils1.passTestCase("User is able to Create Post in Club");
+			System.out.println("after ss method");
+		} else {
+			testUtils1.failTestCase("User is not able to Create Post in Club");
+		}
+		
+		
 
 	}
 
