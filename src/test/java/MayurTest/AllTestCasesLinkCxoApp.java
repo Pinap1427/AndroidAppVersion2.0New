@@ -2448,7 +2448,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		
 		/////////Create Post in Club////////
 		
-		testUtils1.testCaseCreate("TC 9  : Create Post in Club ");
+		testUtils1.testCaseCreate("TC 9 B : Create Post in Club ");
 		Thread.sleep(3000);
 		clubCreatePostMethod.ClickonPostButton();
 		testUtils1.test.log(Status.INFO, "Click on Post button");
@@ -2487,6 +2487,37 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 		} else {
 			testUtils1.failTestCase("User is not able to Create Post in Club");
 		}
+		
+		
+		
+		
+		//////////
+		
+	/////// Share Event////////
+				testUtils1.testCaseCreate("TC 9 UNKNOWN : Share Club ");
+				Thread.sleep(3000);
+				newEventCreateMethod.ClickonThreeDot();
+				testUtils1.test.log(Status.INFO, "Click on Three Dot");
+				newEventCreateMethod.ClickonShare();
+				testUtils1.test.log(Status.INFO, "Click on Share Club");
+				newEventCreateMethod.ClickonOnFeed();
+				testUtils1.test.log(Status.INFO, "Click on Feed");
+				newEventCreateMethod.EnterRepostComment();
+				testUtils1.test.log(Status.INFO, "Enter Reost Comment");
+				newEventCreateMethod.ClickonShareButtonRepost();
+				testUtils1.test.log(Status.INFO, "Click on share Button");
+				///// Add Verify Method after toast message added///
+
+				newEventCreateMethod.ClickonShareButtonRepost();
+				testUtils1.test.log(Status.INFO, "Click on share Button");
+				newEventCreateMethod.ClickonWithConnection();
+				testUtils1.test.log(Status.INFO, "Click on with connection");
+				newEventCreateMethod.ClickonConnection();
+				testUtils1.test.log(Status.INFO, "Click on connect");
+				newEventCreateMethod.ClickonShareButtonConnection();
+				testUtils1.test.log(Status.INFO, "click on connection share button");
+				//// Add Verify Method after toast message added////////
+
 		
 		
 

@@ -168,7 +168,7 @@ public class CreateClubNew extends AbstractComponent {
 		return returnactualGettextofTitle.getText();
 	}
 
-	//// View Club Details//////
+	//// View Club Details////// B
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.ImageView")
 	private WebElement ClickClub;
 
@@ -183,7 +183,7 @@ public class CreateClubNew extends AbstractComponent {
 		return action.isDisplay(VerifyClubDet);
 	}
 
-	///////// Edit Club///////////
+	///////// Edit Club/////////// C
 	public void clickonEdit() {
 		action.clickElement(VerifyClubDet);
 	}
@@ -297,7 +297,7 @@ public class CreateClubNew extends AbstractComponent {
 		return returnactualGettextofTitlEdit.getText();
 	}
 
-	////// Add member in Club///////
+	////// Add member in Club///////D
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"JJ, Members\"]/android.widget.TextView")
 	private WebElement MembersClk;
 
@@ -345,7 +345,7 @@ public class CreateClubNew extends AbstractComponent {
 		return action.isDisplay(verifyInvitedMember);
 	}
 
-	////////// Create Post //////////
+	////////// Create Post ////////// on Hold
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement ClickPost;
 	public void ClickonPost()
