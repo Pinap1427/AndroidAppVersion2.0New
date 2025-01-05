@@ -50,15 +50,11 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(addimgclk);
 	}
 
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1676909412539.png, 36.01 kB, Oct 21\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]") // first
-																																																	// image
-																																																	// will
-																																																	// be
-																																																	// selected
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1200x628-DeepLearning-videojpg.jpg, 40.81 kB, Aug 20, 2024\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]") // first																																																																																												// selected
 	private WebElement imgSelc;
 
 	public void SelectImage() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		action.clickElement(imgSelc);
 	}
 
@@ -195,11 +191,8 @@ public class CreateClubNew extends AbstractComponent {
 		action.clickElement(addimgclkEdit);
 	}
 
-	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1729406282472.jpg, 131 kB, Oct 21\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]") // first
-																																																	// image
-																																																	// will
-																																																	// be
-																																																	// selected
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1628001181816.jpg, 94.56 kB, Sep 30, 2024\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView[2]") // first
+																																														// selected
 	private WebElement imgSelcEdit;
 
 	public void SelectImageEdit() throws InterruptedException {
@@ -211,7 +204,7 @@ public class CreateClubNew extends AbstractComponent {
 	private WebElement enterClubTitleEdit;
 
 	public void EnterClubTitleEdit() {
-		action.sendKeysElement(enterClubTitleEdit, "Stocks Club");
+		action.sendKeysElement(enterClubTitleEdit, "Stocks Club 2024");
 	}
 
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
@@ -293,8 +286,8 @@ public class CreateClubNew extends AbstractComponent {
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView[1]")
 	private WebElement returnactualGettextofTitlEdit;
 
-	public String ActualGettexTitleEdit() {
-		return returnactualGettextofTitlEdit.getText();
+	public boolean ActualGettexTitleEdit() {
+		return action.isDisplay(returnactualGettextofTitlEdit);
 	}
 
 	////// Add member in Club///////D
@@ -344,20 +337,28 @@ public class CreateClubNew extends AbstractComponent {
 	public boolean VerifyInvitedmembers() {
 		return action.isDisplay(verifyInvitedMember);
 	}
+	
+	
 
 	////////// Create Post ////////// on Hold
+	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement ClickPost;
 	public void ClickonPost()
 	{
 		action.clickElement(ClickPost);
 	}
+	
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"Share your Experience...\"]")
 	private WebElement plusIconPost;
 	public void ClickonPlusIconPost()
 	{
 		action.clickElement(plusIconPost);
 	}
+	
+	
+	
+	
 	
 
 

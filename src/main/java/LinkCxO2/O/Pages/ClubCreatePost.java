@@ -54,7 +54,7 @@ public class ClubCreatePost extends AbstractComponent {
 		action.clickElement(firstClub);
 	}
 
-	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[6]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[7]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.View/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement ClickonPost;
 
 	public void ClickonPostButton() {
@@ -81,7 +81,7 @@ public class ClubCreatePost extends AbstractComponent {
 	private WebElement enterText;
 
 	public void EnterTextForPOst() {
-		action.sendKeysElement(enterText, "Club Create Post for Testing");
+		action.sendKeysElement(enterText, "Deep Learning in software testing");
 	}
 	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText")
@@ -148,5 +148,44 @@ public class ClubCreatePost extends AbstractComponent {
 		return GettextofPostTitleLast.getText();
 		
 	}
+	////Edit Club////////////
 	
+	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Edit\"]")
+	private WebElement EditBtn;
+
+	public void ClickonEditButton() {
+		action.clickElement(EditBtn);
+	}
+
+	@FindBy(xpath = "//android.view.ViewGroup[@resource-id=\"RNE__Image__children__container\"]")
+	private WebElement addimgclkEdit;
+
+	public void ClickonAddImageEdit() {
+		action.clickElement(addimgclkEdit);
+	}
+	
+	@FindBy(xpath = "//android.widget.LinearLayout[@content-desc=\"1642694876317.png, 360 kB, Oct 24\"]/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.ImageView")
+	private WebElement imgSelcEdit;
+
+	public void SelectImageEdit() throws InterruptedException {
+		Thread.sleep(2000);
+		action.clickElement(imgSelcEdit);
+	}
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
+	private WebElement editClbTitle;
+	public void EditClubTitle()
+	{
+		action.sendKeysElement(editClbTitle, "Stocks 2024 new new ");
+	}
+	
+	String EditedClubDesc="";
+	
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.widget.EditText[1]")
+	private WebElement editClbDesc;
+	public void EditClubDesc()
+	{
+		action.sendKeysElement(editClbDesc, "Stocks 2024 new new ");
+	}
+	
+
 }

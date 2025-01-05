@@ -2383,143 +2383,408 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 	public void CreateClub() throws InterruptedException, IOException {
 		testUtils1.testCaseCreate("TC 9 A : Create New Club ");
 		Thread.sleep(3000);
-
-		newClubCreateMethod.ClickonMoreButton();
-		testUtils1.test.log(Status.INFO, "Click on More Button");
-		newClubCreateMethod.ClickonClubButton();
-		testUtils1.test.log(Status.INFO, "Click on Club Button");
-		newClubCreateMethod.ClickonPlusIcon();
-		testUtils1.test.log(Status.INFO, "Click on Plus Icon");
-		newClubCreateMethod.ClickonAddImage();
-		testUtils1.test.log(Status.INFO, "Click on Add Image");
-		newClubCreateMethod.SelectImage();
-		testUtils1.test.log(Status.INFO, "Select Image");
-		String ClubTitle = excel.getCellData(1, 30);
-		newClubCreateMethod.EnterClubTitle(ClubTitle);
-		testUtils1.test.log(Status.INFO, "Enter Club Title");
-		String ExpectedClubTitle = newClubCreateMethod.ExpectedGettexTitle();
-		System.out.println(ExpectedClubTitle);
-		String ClubDetails = excel.getCellData(1, 31);
-		newClubCreateMethod.EnterClubDetails(ClubDetails);
-		testUtils1.test.log(Status.INFO, "Enter Club Details");
+		try {
+			newClubCreateMethod.ClickonMoreButton();
+			testUtils1.test.log(Status.INFO, "Click on More Button");
+			newClubCreateMethod.ClickonClubButton();
+			testUtils1.test.log(Status.INFO, "Click on Club Button");
+			newClubCreateMethod.ClickonPlusIcon();
+			testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+			newClubCreateMethod.ClickonAddImage();
+			testUtils1.test.log(Status.INFO, "Click on Add Image");
+			Thread.sleep(2000);
+			newClubCreateMethod.SelectImage();
+			testUtils1.test.log(Status.INFO, "Select Image");
+			String ClubTitle = excel.getCellData(1, 30);
+			newClubCreateMethod.EnterClubTitle(ClubTitle);
+			testUtils1.test.log(Status.INFO, "Enter Club Title");
+			String ExpectedClubTitle = newClubCreateMethod.ExpectedGettexTitle();
+			System.out.println(ExpectedClubTitle);
+			String ClubDetails = excel.getCellData(1, 31);
+			newClubCreateMethod.EnterClubDetails(ClubDetails);
+			testUtils1.test.log(Status.INFO, "Enter Club Details");
 //		add scroll down 
-		Thread.sleep(2000);
-		absCom.swipDownByCoordinates(521, 2122, 664);
+			Thread.sleep(2000);
+			absCom.swipDownByCoordinates(521, 2122, 664);
 
-		newClubCreateMethod.SelectCurrency();
-		testUtils1.test.log(Status.INFO, "Select Currency");
-		newClubCreateMethod.EnterAmount();
-		testUtils1.test.log(Status.INFO, "Enter Amount");
-		newClubCreateMethod.ClickonSelectIndustry();
-		absCom.swipDownByCoordinates(740, 2072, 1332);
-		testUtils1.test.log(Status.INFO, "Swipe down");
-		testUtils1.test.log(Status.INFO, "Click on Select Industry");
-		newClubCreateMethod.SelectIndustryFromDD();
-		testUtils1.test.log(Status.INFO, "Select Industry From DropDown");
-		newClubCreateMethod.ClickonConfirmButton();
-		testUtils1.test.log(Status.INFO, "Click on Confirm Button");
-		newClubCreateMethod.ClickonSelectCategory();
-		testUtils1.test.log(Status.INFO, "Click on Select Category");
-		newClubCreateMethod.SelectCategoryFromDD();
-		testUtils1.test.log(Status.INFO, "Select Category from Dropdown");
-		newClubCreateMethod.ClickonConfirmButton();
-		testUtils1.test.log(Status.INFO, "Click on Confirm Button");
-		newClubCreateMethod.ClickonCreateMyClub();
-		testUtils1.test.log(Status.INFO, "Click on Create My Club");
+			newClubCreateMethod.SelectCurrency();
+			testUtils1.test.log(Status.INFO, "Select Currency");
+			newClubCreateMethod.EnterAmount();
+			testUtils1.test.log(Status.INFO, "Enter Amount");
+			newClubCreateMethod.ClickonSelectIndustry();
+			absCom.swipDownByCoordinates(740, 2072, 1332);
+			testUtils1.test.log(Status.INFO, "Swipe down");
+			testUtils1.test.log(Status.INFO, "Click on Select Industry");
+			newClubCreateMethod.SelectIndustryFromDD();
+			testUtils1.test.log(Status.INFO, "Select Industry From DropDown");
+			newClubCreateMethod.ClickonConfirmButton();
+			testUtils1.test.log(Status.INFO, "Click on Confirm Button");
+			newClubCreateMethod.ClickonSelectCategory();
+			testUtils1.test.log(Status.INFO, "Click on Select Category");
+			newClubCreateMethod.SelectCategoryFromDD();
+			testUtils1.test.log(Status.INFO, "Select Category from Dropdown");
+			newClubCreateMethod.ClickonConfirmButton();
+			testUtils1.test.log(Status.INFO, "Click on Confirm Button");
+			newClubCreateMethod.ClickonCreateMyClub();
+			testUtils1.test.log(Status.INFO, "Click on Create My Club");
 //		newClubCreateMethod.SelectFirstConnection();
 //		testUtils1.test.log(Status.INFO, "Select First Connection Checkbox");
-		Thread.sleep(3000);
-		newClubCreateMethod.ClickonPublishClub();
-		testUtils1.test.log(Status.INFO, "Click on Publish Club");
+			Thread.sleep(3000);
+			newClubCreateMethod.ClickonPublishClub();
+			testUtils1.test.log(Status.INFO, "Click on Publish Club");
 //		newJobCreateMethod.TouchClickonMyJob();
 //		testUtils1.test.log(Status.INFO, "Click on My Jobs Using Touch Click");
 //		absCom.swipDownByCoordinates(740, 2072, 1332);
 //		testUtils1.test.log(Status.INFO, "Swipe down");
-		Thread.sleep(5000);
-		String ActualClubTitle = newClubCreateMethod.ActualGettexTitle();
-		System.out.println(ActualClubTitle);
-		if (ActualClubTitle.equals(ExpectedClubTitle)) {
-			System.out.println("inside if block");
-			testUtils1.passTestCase("User is able to Create New Club.");
-			System.out.println("after ss method");
-		} else {
-			testUtils1.failTestCase("User is not able to Create New Club.");
-		}
-		
-		/////////Create Post in Club////////
-		
-		testUtils1.testCaseCreate("TC 9 B : Create Post in Club ");
-		Thread.sleep(3000);
-		clubCreatePostMethod.ClickonPostButton();
-		testUtils1.test.log(Status.INFO, "Click on Post button");
-		clubCreatePostMethod.ClickonPlusIcon();
-		testUtils1.test.log(Status.INFO, "Click on Plus Icon");
-		clubCreatePostMethod.ClickonCreatePost();
-		testUtils1.test.log(Status.INFO, "Click on Create Post");
-		Thread.sleep(4000);
-		clubCreatePostMethod.EnterTextForPOst();
-		testUtils1.test.log(Status.INFO, "Enter Text ");
-		String ExpectedPostText = clubCreatePostMethod.GetExpectedTitlePost();
-		System.out.println(ExpectedPostText);
-		clubCreatePostMethod.ClickonPhotosIcon();
-		testUtils1.test.log(Status.INFO, "Click on Photos icon");
-		Thread.sleep(3000);
+			Thread.sleep(5000);
+			String ActualClubTitle = newClubCreateMethod.ActualGettexTitle();
+			System.out.println(ActualClubTitle);
+			if (ActualClubTitle.equals(ExpectedClubTitle)) {
+				System.out.println("inside if block");
+				testUtils1.passTestCase("User is able to Create New Club.");
+				System.out.println("after ss method");
+			} else {
+				testUtils1.failTestCase("User is not able to Create New Club.");
+			}
+
+			////////// View Details/////////
+			testUtils1.testCaseCreate("TC 9 B : View Details Club ");
+			Thread.sleep(3000);
+
+			newEventCreateMethod.ClickonEvent();
+			testUtils1.test.log(Status.INFO, "Click on Event");
+			Thread.sleep(1000);
+			try {
+				if (newEventCreateMethod.VerifyViewDetails()) {
+					testUtils1.passTestCase("User is  able to View details of the Club");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to View details of the Club");
+			}
+
+			/////////////// Edit Club//////////
+
+			testUtils1.testCaseCreate("TC 9 C : Edit Club ");
+			Thread.sleep(3000);
+
+			newClubCreateMethod.clickonEdit();
+			testUtils1.passTestCase("Click on Edit Button");
+			Thread.sleep(1000);
+			newClubCreateMethod.ClickonAddImageEdit();
+			testUtils1.passTestCase("Click on Add Image");
+			newClubCreateMethod.SelectImageEdit();
+			testUtils1.passTestCase("Select Image ");
+			newClubCreateMethod.EnterClubTitleEdit();
+			testUtils1.passTestCase("Enter Club title");
+//			newClubCreateMethod.ExpectedGettexTitleEdit();
+//			testUtils1.passTestCase("");
+			newClubCreateMethod.EnterClubDetailsEdit();
+			testUtils1.passTestCase("Enter Club Details");
+			absCom.swipDownByCoordinates(740, 2072, 1332);
+			testUtils1.test.log(Status.INFO, "Swipe down");
+			Thread.sleep(2000);
+			newClubCreateMethod.ClickonPrivate();
+			testUtils1.passTestCase("Click on Private");
+			newClubCreateMethod.ClickonFreeToggleButton();
+			testUtils1.passTestCase("Click on Free Toggle Button");
+			absCom.swipDownByCoordinates(740, 2072, 1332);
+			testUtils1.test.log(Status.INFO, "Swipe down");
+			Thread.sleep(2000);
+			newClubCreateMethod.ClickonSelectIndustryEdit();
+			testUtils1.passTestCase("Click on industry");
+			newClubCreateMethod.SelectIndustryFromDDEdit();
+			testUtils1.passTestCase("Select Industry");
+			newClubCreateMethod.ClickonConfirmButtonEdit();
+			testUtils1.passTestCase("Click on Confirm button");
+			newClubCreateMethod.ClickonSelectCategoryEdit();
+			testUtils1.passTestCase("Click on Category");
+			newClubCreateMethod.SelectCategoryFromDDEdit();
+			testUtils1.passTestCase("Select Category");
+			newClubCreateMethod.ClickonUpdateClub();
+			Thread.sleep(2000);
+			testUtils1.passTestCase("Click on Update Club");
+			Thread.sleep(2000);
+			try {
+				if (newClubCreateMethod.ActualGettexTitleEdit()) {
+					testUtils1.passTestCase("User is  able to Edit Club");
+
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Edit Club");
+			}
+
+			///////// Create Post in Club////////
+			testUtils1.testCaseCreate("TC 9 D : Create Post in Club ");
+			Thread.sleep(3000);
+			clubCreatePostMethod.ClickonPostButton();
+			testUtils1.test.log(Status.INFO, "Click on Post button");
+			clubCreatePostMethod.ClickonPlusIcon();
+			testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+			clubCreatePostMethod.ClickonCreatePost();
+			testUtils1.test.log(Status.INFO, "Click on Create Post");
+			Thread.sleep(4000);
+			clubCreatePostMethod.EnterTextForPOst();
+			testUtils1.test.log(Status.INFO, "Enter Text ");
+			String ExpectedPostText = clubCreatePostMethod.GetExpectedTitlePost();
+			System.out.println(ExpectedPostText);
+			clubCreatePostMethod.ClickonPhotosIcon();
+			testUtils1.test.log(Status.INFO, "Click on Photos icon");
+			Thread.sleep(3000);
 //		createpostMethod.EnterBtn();
 //		clubCreatePostMethod.ClickonAllowButton();
 //		testUtils1.test.log(Status.INFO, "Click on Allow");
-		Thread.sleep(2000);
-		clubCreatePostMethod.SelectImage();
-		testUtils1.test.log(Status.INFO, "Select Image");
-		Thread.sleep(3000);
-		clubCreatePostMethod.ClickonAddYourPost();
-		testUtils1.test.log(Status.INFO, "Click on Add Your Post");
-		clubCreatePostMethod.ClickonPublishNow();
-		testUtils1.test.log(Status.INFO, "Click on Publish Now");
-		Thread.sleep(6000);
+			Thread.sleep(2000);
+			clubCreatePostMethod.SelectImage();
+			testUtils1.test.log(Status.INFO, "Select Image");
+			Thread.sleep(3000);
+			clubCreatePostMethod.ClickonAddYourPost();
+			testUtils1.test.log(Status.INFO, "Click on Add Your Post");
+			clubCreatePostMethod.ClickonPublishNow();
+			testUtils1.test.log(Status.INFO, "Click on Publish Now");
+			Thread.sleep(6000);
 
-		String ActualPostText = clubCreatePostMethod.GetActualTitlePost();
-		System.out.println(ActualPostText);
+			String ActualPostText = clubCreatePostMethod.GetActualTitlePost();
+			System.out.println(ActualPostText);
 
-		if (ActualPostText.equals(ExpectedPostText)) {
-			System.out.println("inside if block");
-			testUtils1.passTestCase("User is able to Create Post in Club");
-			System.out.println("after ss method");
-		} else {
-			testUtils1.failTestCase("User is not able to Create Post in Club");
-		}
-		
-		
-		
-		
-		//////////
-		
-	/////// Share Event////////
-				testUtils1.testCaseCreate("TC 9 UNKNOWN : Share Club ");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+					testUtils1.passTestCase("User is able to Create Post in Club");
+
+				}
+			} catch (Exception e) {
+				testUtils1.failTestCase("User is not able to Create Post in Club");
+				// TODO: handle exception
+			}
+
+////////////Post like//////////
+			testUtils1.testCaseCreate("TC 9 E : Post Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Post");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 9 F : Post DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Post");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Post");
+			}
+
+			////////// Post Article//////////
+
+			testUtils1.testCaseCreate("TC 9 G : Compose Article in Club ");
+			Thread.sleep(3000);
+			composeArticleMethod.ClickonPlusIcon();
+			testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+			composeArticleMethod.ClickonComposeArticle();
+			testUtils1.test.log(Status.INFO, "Click on Compose Article");
+			composeArticleMethod.ClickonImage();
+			testUtils1.test.log(Status.INFO, "Click on Image");
+			Thread.sleep(3000);
+//			composeArticleMethod.SelectImage();
+//			testUtils1.test.log(Status.INFO, "Select Image");
+			
+			clubCreatePostMethod.SelectImage();
+			testUtils1.test.log(Status.INFO, "Select Image");
+			Thread.sleep(3000);
+			
+			String ArticleTitle = excel.getCellData(1, 6);
+			composeArticleMethod.EnterArticleTitle(ArticleTitle);
+			testUtils1.test.log(Status.INFO, "Enter Article");
+			String ArticleDesc = excel.getCellData(1, 7);
+			composeArticleMethod.EnterDescription(ArticleDesc);
+			testUtils1.test.log(Status.INFO, "Enter Description of Article");
+			composeArticleMethod.ClickonPublishArticle();
+			testUtils1.test.log(Status.INFO, "Click on Publish Article");
+			Thread.sleep(3000);
+			try {
+				if (composeArticleMethod.VerifyArticlePostedorNot()) {
+
+					testUtils1.passTestCase("User is able to compose Article in Club");
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to compose Article in Club");
+			}
+
+////////////Post like//////////
+			testUtils1.testCaseCreate("TC 9 H : Article Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Article");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Article");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 9 I : Article DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Article");
+
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Article");
+			}
+
+			/////////// Create Poll ///////
+			
+			testUtils1.testCaseCreate("TC 9 J : Create Poll ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on DisLike button");
+			try {
+			
+				clubCreatePollMethod.ClickonPostButton();
+				testUtils1.test.log(Status.INFO, "Click on Post button");
+				clubCreatePollMethod.ClickonPlusIcon();
+				testUtils1.test.log(Status.INFO, "Click on Plus Icon");
+				clubCreatePollMethod.ClickonCreatePoll();
+				testUtils1.test.log(Status.INFO, "Click on Create Poll");
+				clubCreatePollMethod.ClickonOptionAddButton();
+				testUtils1.test.log(Status.INFO, "Click on Add Option ");
+				clubCreatePollMethod.ClickonSelectCategory();
+				testUtils1.test.log(Status.INFO, "Click on Category");
+				clubCreatePollMethod.SelectCategoryfromDropdown();
+				testUtils1.test.log(Status.INFO, "Select Category from dropdown");
+				clubCreatePollMethod.EnterQuestion();
+				testUtils1.test.log(Status.INFO, "Enter Question");
+				Thread.sleep(2000);
+				String ExpectedQuestion = clubCreatePollMethod.GetFirstTextofPoll();
+				System.out.println(ExpectedQuestion);
+				clubCreatePollMethod.EnterOption1();
+				testUtils1.test.log(Status.INFO, "Enter Option 1");
+				clubCreatePollMethod.EnterOption2();
+				testUtils1.test.log(Status.INFO, "Enter Option 2");
+				clubCreatePollMethod.EnterOption3();
+				testUtils1.test.log(Status.INFO, "Enter Option 3");
+				clubCreatePollMethod.EnterOption4();
+				testUtils1.test.log(Status.INFO, "Enter Option 4");
+				clubCreatePollMethod.ClickonPollEndDropDown();
+				testUtils1.test.log(Status.INFO, "Click on Poll End Dropdown");
+				clubCreatePollMethod.SelectPollEndDate();
+				testUtils1.test.log(Status.INFO, "Select Poll End date");
+				clubCreatePollMethod.ClickonPublishPollButton();
+				testUtils1.test.log(Status.INFO, "Click on Publish Poll Button");
 				Thread.sleep(3000);
-				newEventCreateMethod.ClickonThreeDot();
-				testUtils1.test.log(Status.INFO, "Click on Three Dot");
-				newEventCreateMethod.ClickonShare();
-				testUtils1.test.log(Status.INFO, "Click on Share Club");
-				newEventCreateMethod.ClickonOnFeed();
-				testUtils1.test.log(Status.INFO, "Click on Feed");
-				newEventCreateMethod.EnterRepostComment();
-				testUtils1.test.log(Status.INFO, "Enter Reost Comment");
-				newEventCreateMethod.ClickonShareButtonRepost();
-				testUtils1.test.log(Status.INFO, "Click on share Button");
-				///// Add Verify Method after toast message added///
+				Thread.sleep(3000);
+				String ActualQuestion = clubCreatePollMethod.GetLastTextofPoll();
+				System.out.println(ActualQuestion);
 
-				newEventCreateMethod.ClickonShareButtonRepost();
-				testUtils1.test.log(Status.INFO, "Click on share Button");
-				newEventCreateMethod.ClickonWithConnection();
-				testUtils1.test.log(Status.INFO, "Click on with connection");
-				newEventCreateMethod.ClickonConnection();
-				testUtils1.test.log(Status.INFO, "Click on connect");
-				newEventCreateMethod.ClickonShareButtonConnection();
-				testUtils1.test.log(Status.INFO, "click on connection share button");
-				//// Add Verify Method after toast message added////////
+				if (ActualQuestion.equals(ExpectedQuestion)) {
+					System.out.println("inside if block");
+					testUtils1.passTestCase("User is able to Create Poll in Club");
+					System.out.println("after ss method");
+				} else {
+					testUtils1.failTestCase("User is not able to Create Poll in Club");
+				}
 
+			} catch (Exception e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Create Poll in Club");
+			}
 		
-		
+////////////Post like//////////
+			testUtils1.testCaseCreate("TC 9 K : Poll Like ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Like button");
+			try {
+				if (createpostMethod.VerifyLikedPost()) {
+
+					testUtils1.passTestCase("User is able to Like Poll");
+
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+				testUtils1.failTestCase("User is not able to Like Poll");
+			}
+
+			//////////// Post Dislike//////////
+			testUtils1.testCaseCreate("TC 9 L : Poll DisLike ");
+			Thread.sleep(3000);
+			createpostMethod.ClickonDisLikePost();
+			testUtils1.test.log(Status.INFO, "Click on Poll button");
+			try {
+				if (createpostMethod.VerifyDislikeLikedPost()) {
+
+					testUtils1.passTestCase("User is able to DisLike Article");
+
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				testUtils1.failTestCase("User is not able to DisLike Article");
+			}
+
+
+			////////// Create Survey ////////////
+
+			////////// Create Query //////////////
+//			/////// Share Event////////
+//			testUtils1.testCaseCreate("TC 9 UNKNOWN : Share Club ");
+//			Thread.sleep(3000);
+//			newEventCreateMethod.ClickonThreeDot();
+//			testUtils1.test.log(Status.INFO, "Click on Three Dot");
+//			newEventCreateMethod.ClickonShare();
+//			testUtils1.test.log(Status.INFO, "Click on Share Club");
+//			newEventCreateMethod.ClickonOnFeed();
+//			testUtils1.test.log(Status.INFO, "Click on Feed");
+//			newEventCreateMethod.EnterRepostComment();
+//			testUtils1.test.log(Status.INFO, "Enter Reost Comment");
+//			newEventCreateMethod.ClickonShareButtonRepost();
+//			testUtils1.test.log(Status.INFO, "Click on share Button");
+//			///// Add Verify Method after toast message added///
+//
+//			newEventCreateMethod.ClickonShareButtonRepost();
+//			testUtils1.test.log(Status.INFO, "Click on share Button");
+//			newEventCreateMethod.ClickonWithConnection();
+//			testUtils1.test.log(Status.INFO, "Click on with connection");
+//			newEventCreateMethod.ClickonConnection();
+//			testUtils1.test.log(Status.INFO, "Click on connect");
+//			newEventCreateMethod.ClickonShareButtonConnection();
+//			testUtils1.test.log(Status.INFO, "click on connection share button");
+			//// Add Verify Method after toast message added////////
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			testUtils1.failTestCase("User is not able to Create Club , TestCase Failed");
+		}
 
 	}
 
