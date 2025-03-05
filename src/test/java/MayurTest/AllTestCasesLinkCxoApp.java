@@ -65,7 +65,7 @@ import jdk.internal.org.jline.utils.Log;
 public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 	private long startTime;
 
-	@BeforeMethod
+	@BeforeMethod	
 	public void beforeMethod() {
 		startTime = System.nanoTime();
 	}
@@ -2606,11 +2606,11 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			Thread.sleep(3000);
 //			composeArticleMethod.SelectImage();
 //			testUtils1.test.log(Status.INFO, "Select Image");
-			
+
 			clubCreatePostMethod.SelectImage();
 			testUtils1.test.log(Status.INFO, "Select Image");
 			Thread.sleep(3000);
-			
+
 			String ArticleTitle = excel.getCellData(1, 6);
 			composeArticleMethod.EnterArticleTitle(ArticleTitle);
 			testUtils1.test.log(Status.INFO, "Enter Article");
@@ -2664,13 +2664,13 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 			}
 
 			/////////// Create Poll ///////
-			
+
 			testUtils1.testCaseCreate("TC 9 J : Create Poll ");
 			Thread.sleep(3000);
 			createpostMethod.ClickonDisLikePost();
 			testUtils1.test.log(Status.INFO, "Click on DisLike button");
 			try {
-			
+
 				clubCreatePollMethod.ClickonPostButton();
 				testUtils1.test.log(Status.INFO, "Click on Post button");
 				clubCreatePollMethod.ClickonPlusIcon();
@@ -2719,7 +2719,7 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				e.printStackTrace();
 				testUtils1.failTestCase("User is not able to Create Poll in Club");
 			}
-		
+
 ////////////Post like//////////
 			testUtils1.testCaseCreate("TC 9 K : Poll Like ");
 			Thread.sleep(3000);
@@ -2751,7 +2751,6 @@ public class AllTestCasesLinkCxoApp extends TestBaseLinkCxo {
 				e1.printStackTrace();
 				testUtils1.failTestCase("User is not able to DisLike Article");
 			}
-
 
 			////////// Create Survey ////////////
 
